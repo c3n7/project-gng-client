@@ -40,8 +40,8 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
-margin_right = 960.0
-margin_bottom = 480.0
+margin_right = 1366.0
+margin_bottom = 768.0
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5

@@ -14,10 +14,13 @@ var keywords = [
 	"assert", "del", "global", "not", "with",
 	"async", "elif", "if", "or", "yield"]
 
+var safe_to_make_http_request = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	var error = $HTTPRequest.connect("request_completed", self, "_on_request_completed")
+	if error != OK:
+		push_error("Error while connecting signal")
 	for keyword in keywords:
 		$HBoxContainer/TextEdit.add_keyword_color(keyword, Color("#fba922"))
 
@@ -33,8 +36,11 @@ class Calculate(object):
 
 
 func _on_Build_pressed():
-	$Alert/HBoxContainer/Label.text = "Building"
-	$Alert/AnimationPlayer.play("slide_in_out")
+	if not safe_to_make_http_request:
+		# TODO: Do this better
+		$Alert/HBoxContainer/Label.text = "   Wait"
+		return
+	show_alert("building")
 	var code = $HBoxContainer/TextEdit.text
 
 	var test = """
@@ -47,10 +53,10 @@ class TestCalculate(unittest.TestCase):
 		self.calc = Calculate()
 
 	def test_add_method_returns_correct_result(self):
-		self.assertEqual(4, self.calc.add(2, 2))
+		self.assertEqual(5, self.calc.add(3, 2))
 
 	def test_subtract_method_returns_correct_result(self):
-		self.assertEqual(2, self.calc.subtract(4, 2))
+		self.assertEqual(7, self.calc.subtract(10, 3))
 
 if __name__ == '__main__':
 	unittest.main()
@@ -58,19 +64,46 @@ if __name__ == '__main__':
 	_make_post_request("http://127.0.0.1:5000/code/",
 		{"code":code, "test":test}, false)
 
+func show_alert(image):
+	if $Alert/AnimationPlayer.is_playing():
+		# If animation is already playing, wait first
+		yield($Alert/AnimationPlayer, "animation_finished")
+	
+	# HACK: Add padding better
+	var labelText = ""	
+	match image:
+		"success":
+			$Alert/Panel/Building.hide()
+			$Alert/Panel/Failure.hide()
+			$Alert/Panel/Success.show()
+			labelText = "   Success"
+		"failed":
+			$Alert/Panel/Building.hide()
+			$Alert/Panel/Failure.show()
+			$Alert/Panel/Success.hide()
+			labelText = "   Failed"
+		"building":
+			$Alert/Panel/Building.show()
+			$Alert/Panel/Failure.hide()
+			$Alert/Panel/Success.hide()
+			labelText = "   Building"
+	
+	$Alert/HBoxContainer/Label.text = labelText
+	$Alert/AnimationPlayer.play("slide_in_out")
+	$Whoosh.play()
 
 func _on_request_completed(_result, _response_code, _headers, body):
+	safe_to_make_http_request = true
 	var json = JSON.parse(body.get_string_from_utf8())
 	print(json.result["summary"])
 	print(json.result["tests"][0]["keywords"])
 	print(json.result["tests"][0]["outcome"])
-	if $Alert/AnimationPlayer.is_playing():
-		yield($Alert/AnimationPlayer, "animation_finished")
-		$Alert/HBoxContainer/Label.text = "Success"
-		$Alert/AnimationPlayer.play("slide_in_out")
+	var buildResult = ""
+	if json.result["summary"]["collected"] == json.result["summary"]["passed"]:
+		buildResult = "success"
 	else:
-		$Alert/HBoxContainer/Label.text = "Success"
-		$Alert/AnimationPlayer.play("slide_in_out")
+		buildResult = "failed"
+	show_alert(buildResult)
 
 func _make_post_request(url, data_to_send, use_ssl):
 	# Convert data to json string:
@@ -78,5 +111,6 @@ func _make_post_request(url, data_to_send, use_ssl):
 	# Add 'Content-Type' header:
 	var headers = ["Content-Type: application/json"]
 	var error = $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
+	safe_to_make_http_request = false
 	if error != OK:
 		push_error("An error in HTTP request")
