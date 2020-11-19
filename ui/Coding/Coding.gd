@@ -61,12 +61,16 @@ if __name__ == '__main__':
 
 func _on_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.parse(body.get_string_from_utf8())
-#	print(json.result)
-#	print(headers)
-#	print(headers[1])
 	print(json.result["summary"])
 	print(json.result["tests"][0]["keywords"])
 	print(json.result["tests"][0]["outcome"])
+	if $Alert/AnimationPlayer.is_playing():
+		yield($Alert/AnimationPlayer, "animation_finished")
+		$Alert/HBoxContainer/Label.text = "Success"
+		$Alert/AnimationPlayer.play("slide_in_out")
+	else:
+		$Alert/HBoxContainer/Label.text = "Success"
+		$Alert/AnimationPlayer.play("slide_in_out")
 
 func _make_post_request(url, data_to_send, use_ssl):
 	# Convert data to json string:
