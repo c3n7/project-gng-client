@@ -86,8 +86,8 @@ __meta__ = {
 }
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer"]
-margin_right = 756.0
-margin_bottom = 480.0
+margin_right = 1162.0
+margin_bottom = 768.0
 size_flags_horizontal = 11
 custom_fonts/font = SubResource( 2 )
 syntax_highlighting = true
@@ -96,9 +96,9 @@ draw_tabs = true
 draw_spaces = true
 
 [node name="Panel" type="Panel" parent="HBoxContainer"]
-margin_left = 760.0
-margin_right = 960.0
-margin_bottom = 480.0
+margin_left = 1166.0
+margin_right = 1366.0
+margin_bottom = 768.0
 rect_min_size = Vector2( 200, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
