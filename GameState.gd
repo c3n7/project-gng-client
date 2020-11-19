@@ -17,21 +17,31 @@ var levels = [
 ]
 
 func restart():
-	get_tree().change_scene(title_screen)
+	var error = get_tree().change_scene(title_screen)
+	if error != OK:
+		push_error("Error while changing scene")
 
 func next_level():
-	get_tree().change_scene(level1)
+	var error = get_tree().change_scene(level1)
+	if error != OK:
+		push_error("Error while changing scene")
 
 func open_level(i):
 	if i > levels.size():
 		return
-	get_tree().change_scene(levels[i - 1])
+	var error = get_tree().change_scene(levels[i - 1])
+	if error != OK:
+		push_error("Error while changing scene")
 
 func open_levels_screen():
-	get_tree().change_scene(levels_screen)
+	var error = get_tree().change_scene(levels_screen)
+	if error != OK:
+		push_error("Error while changing scene")
 
 func open_title_screen():
-	get_tree().change_scene(title_screen)
+	var error = get_tree().change_scene(title_screen)
+	if error != OK:
+		push_error("Error while changing scene")
 
 func set_responsiveness(type):
 	if type == Responsiveness.EXPAND:
