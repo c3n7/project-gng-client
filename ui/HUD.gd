@@ -1,5 +1,6 @@
 extends MarginContainer
 
+signal pause
 
 onready var life_counter = [
 	$HBoxContainer/HBoxContainer/L1,
@@ -21,3 +22,7 @@ func _on_Player_life_changed(value):
 func _on_score_changed(value):
 	$HBoxContainer/ScoreLabel.text = str(value)
 
+
+func _on_Pause_pressed():
+	emit_signal("pause")
+	

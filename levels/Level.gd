@@ -135,3 +135,13 @@ func _on_Controls_goingright():
 func _on_Controls_notgoingright():
 	for p in $Player.get_children():
 		p.cancel_move_in_direction("right")
+
+
+func _on_HUD_pause():
+	get_tree().paused = true
+	$CanvasLayer/paused_dialog.show()
+
+
+func _on_paused_dialog_confirmed():
+	$CanvasLayer/paused_dialog.hide()
+	get_tree().paused = false

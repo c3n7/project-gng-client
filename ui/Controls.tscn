@@ -66,7 +66,6 @@ size_flags_horizontal = 3
 [node name="BottomButton" type="TouchScreenButton" parent="TB/Bottom"]
 visible = false
 position = Vector2( -4, 0 )
-scale = Vector2( 1, 1 )
 visibility_mode = 1
 
 [node name="Top" type="HBoxContainer" parent="TB"]
@@ -76,7 +75,6 @@ margin_bottom = 80.0
 size_flags_horizontal = 6
 
 [node name="TopButton" type="TouchScreenButton" parent="TB/Top"]
-scale = Vector2( 1, 1 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 1 )
 visibility_mode = 1

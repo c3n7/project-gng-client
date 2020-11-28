@@ -167,27 +167,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect11" type="TextureRect" parent="Textures"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = 831.811
-margin_top = 2.28773
-margin_right = 875.811
-margin_bottom = 37.2877
-size_flags_horizontal = 4
-size_flags_vertical = 4
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Textures/TextureRect11"]
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 2176, 128, 256, 512 )
-
 [node name="OceanTop" type="HBoxContainer" parent="Textures"]
 anchor_left = 0.5
 anchor_top = 1.0
@@ -500,6 +479,23 @@ margin_left = 1360.0
 margin_right = 1424.0
 margin_bottom = 64.0
 texture = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="TextureRect"]
+position = Vector2( -91.8374, -4.04564 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 2176, 128, 256, 512 )
 [connection signal="pressed" from="Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Buttons/Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]

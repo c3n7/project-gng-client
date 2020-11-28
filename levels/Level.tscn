@@ -830,6 +830,19 @@ format = 1
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
+[node name="paused_dialog" type="AcceptDialog" parent="CanvasLayer"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.0
+margin_top = -29.0
+margin_right = 52.0
+margin_bottom = 29.0
+window_title = "Paused"
+dialog_text = "Game Paused"
+
 [node name="CollectibleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -23.224
@@ -842,3 +855,5 @@ stream = ExtResource( 10 )
 [connection signal="goup" from="Control/Controls" to="." method="_on_Controls_goup"]
 [connection signal="notgoingleft" from="Control/Controls" to="." method="_on_Controls_notgoingleft"]
 [connection signal="notgoingright" from="Control/Controls" to="." method="_on_Controls_notgoingright"]
+[connection signal="pause" from="CanvasLayer/HUD" to="." method="_on_HUD_pause"]
+[connection signal="confirmed" from="CanvasLayer/paused_dialog" to="." method="_on_paused_dialog_confirmed"]

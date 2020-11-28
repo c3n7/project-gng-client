@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/PNG/Players/Player Grey/life.png" type="Texture" id=2]
 [ext_resource path="res://ui/HUD.gd" type="Script" id=3]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight14.png" type="Texture" id=4]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatLight12.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -20,11 +22,11 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 920.0
+margin_right = 1326.0
 margin_bottom = 108.0
 
 [node name="ScoreLabel" type="Label" parent="HBoxContainer"]
-margin_right = 740.0
+margin_right = 1090.0
 margin_bottom = 108.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -34,8 +36,8 @@ text = "1
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 744.0
-margin_right = 920.0
+margin_left = 1094.0
+margin_right = 1270.0
 margin_bottom = 108.0
 
 [node name="L1" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
@@ -66,3 +68,16 @@ margin_left = 144.0
 margin_right = 176.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer"]
+margin_left = 1274.0
+margin_right = 1274.0
+margin_bottom = 108.0
+
+[node name="Pause" type="TextureButton" parent="HBoxContainer"]
+margin_left = 1278.0
+margin_right = 1326.0
+margin_bottom = 108.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+[connection signal="pressed" from="HBoxContainer/Pause" to="." method="_on_Pause_pressed"]
