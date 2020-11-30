@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://themes/blue_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/Coding/InteractiveSession.gd" type="Script" id=3]
 [ext_resource path="res://ui/Coding/Alert.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/whoosh.wav" type="AudioStream" id=5]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0862745, 0.462745, 0.623529, 1 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -15,6 +18,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -57,35 +68,54 @@ show_line_numbers = true
 draw_tabs = true
 draw_spaces = true
 
-[node name="Panel" type="Panel" parent="Full/Right"]
+[node name="TabContainer" type="TabContainer" parent="Full/Right"]
 margin_top = 386.0
 margin_right = 681.0
 margin_bottom = 768.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Full/Right/Panel"]
+[node name="Build" type="Tabs" parent="Full/Right/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 20.0
+margin_right = -3.0
+margin_bottom = -2.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Full/Right/TabContainer/Build"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -8.0
-margin_top = -59.0
-margin_right = -8.0
-margin_bottom = -11.0
+margin_left = -9.0
+margin_top = -60.0
+margin_right = -9.0
+margin_bottom = -12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/Panel/MarginContainer"]
-margin_right = 681.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/TabContainer/Build/MarginContainer"]
+margin_right = 676.0
 margin_bottom = 48.0
 
-[node name="Build" type="Button" parent="Full/Right/Panel/MarginContainer/HBoxContainer"]
-margin_left = 572.0
-margin_right = 681.0
+[node name="Build" type="Button" parent="Full/Right/TabContainer/Build/MarginContainer/HBoxContainer"]
+margin_left = 567.0
+margin_right = 676.0
 margin_bottom = 48.0
 size_flags_horizontal = 10
 text = "Build"
+
+[node name="Slides" type="Tabs" parent="Full/Right/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 20.0
+margin_right = -3.0
+margin_bottom = -2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -93,4 +123,4 @@ text = "Build"
 
 [node name="Whoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-[connection signal="pressed" from="Full/Right/Panel/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]
+[connection signal="pressed" from="Full/Right/TabContainer/Build/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]
