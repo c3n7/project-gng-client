@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Project GNG"
 run/main_scene="res://ui/HomeScreen.tscn"
 boot_splash/image="res://assets/splash.png"
-config/icon="res://assets/PNG/Players/Player Blue/playerBlue_walk4.png"
+config/icon="res://assets/PNG/Players/Player Grey/playerGrey_roll.png"
 
 [autoload]
 
