@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://themes/blue_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui/Coding/InteractiveSession.gd" type="Script" id=3]
+[ext_resource path="res://ui/Coding/Alert.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sounds/whoosh.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 2 )
+
+[node name="InteractiveSession" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Full" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Full"]
+margin_right = 681.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="VBoxContainer" parent="Full"]
+margin_left = 685.0
+margin_right = 1366.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="HBoxContainer" parent="Full/Right"]
+margin_right = 681.0
+margin_bottom = 382.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CodingGround" type="TextEdit" parent="Full/Right/Top"]
+margin_right = 681.0
+margin_bottom = 382.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+syntax_highlighting = true
+show_line_numbers = true
+draw_tabs = true
+draw_spaces = true
+
+[node name="Panel" type="Panel" parent="Full/Right"]
+margin_top = 386.0
+margin_right = 681.0
+margin_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Full/Right/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = -59.0
+margin_right = -8.0
+margin_bottom = -11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/Panel/MarginContainer"]
+margin_right = 681.0
+margin_bottom = 48.0
+
+[node name="Build" type="Button" parent="Full/Right/Panel/MarginContainer/HBoxContainer"]
+margin_left = 572.0
+margin_right = 681.0
+margin_bottom = 48.0
+size_flags_horizontal = 10
+text = "Build"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Alert" parent="." instance=ExtResource( 4 )]
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+[connection signal="pressed" from="Full/Right/Panel/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]

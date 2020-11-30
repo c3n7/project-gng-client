@@ -46,5 +46,5 @@ position = Vector2( 1469.41, 334.72 )
 [node name="WalkingEnemyBounds2" parent="EnemyBounds" index="1" instance=ExtResource( 9 )]
 position = Vector2( 1947.58, 330.843 )
 
-[node name="PlayerSpawn" parent="." index="10"]
+[node name="PlayerSpawn" parent="." index="11"]
 position = Vector2( 128, 40 )

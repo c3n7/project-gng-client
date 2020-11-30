@@ -1,9 +1,6 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var coding_ground = $Full/Right/Top/CodingGround
 
 var keywords = [
 	"False", "await", "else", "import", "pass",
@@ -22,9 +19,9 @@ func _ready():
 	if error != OK:
 		push_error("Error while connecting signal")
 	for keyword in keywords:
-		$HBoxContainer/TextEdit.add_keyword_color(keyword, Color("#fba922"))
+		coding_ground.add_keyword_color(keyword, Color("#fba922"))
 
-	$HBoxContainer/TextEdit.text = """
+	coding_ground.text = """
 class Calculate(object):
 
 	def add(self, x, y):
@@ -47,7 +44,7 @@ func _on_Build_pressed():
 		$Alert/HBoxContainer/Label.text = "   Wait"
 		return
 	show_alert("building")
-	var code = $HBoxContainer/TextEdit.text
+	var code = coding_ground.text
 
 	var test = """
 import unittest
@@ -73,6 +70,7 @@ if __name__ == '__main__':
 """
 	_make_post_request("http://127.0.0.1:5000/code/",
 		{"code":code, "test":test}, false)
+
 
 func show_alert(image):
 	if $Alert/AnimationPlayer.is_playing():
@@ -102,7 +100,7 @@ func show_alert(image):
 	$Alert/HBoxContainer/Label.text = labelText
 	$Alert/AnimationPlayer.play("slide_in_out")
 	$Whoosh.play()
-
+	
 func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
 	var json = JSON.parse(body.get_string_from_utf8())
