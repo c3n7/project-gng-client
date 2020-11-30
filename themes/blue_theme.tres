@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=41 format=2]
+[gd_resource type="Theme" load_steps=43 format=2]
 
 [ext_resource path="res://assets/HUD/uipack/PNG/grey_sliderUp.png" type="Texture" id=1]
 [ext_resource path="res://assets/HUD/uipack/Font/kenvector_future_thin.ttf" type="DynamicFontData" id=2]
@@ -223,17 +223,17 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="DynamicFontData" id=29]
+font_path = "res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf"
+
+[sub_resource type="DynamicFont" id=30]
+size = 15
+font_data = SubResource( 29 )
+
 [sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.0823529, 0.564706, 0.768627, 1 )
-border_width_left = 2
 border_width_top = 2
-border_width_right = 3
-border_width_bottom = 2
 border_color = Color( 0.0588235, 0.427451, 0.580392, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 shadow_color = Color( 0.0588235, 0.427451, 0.580392, 1 )
 shadow_size = 1
 
@@ -243,9 +243,9 @@ content_margin_right = 2.0
 content_margin_top = 0.0
 content_margin_bottom = 0.0
 bg_color = Color( 0.0392157, 0.243137, 0.333333, 1 )
-border_color = Color( 0.0392157, 0.243137, 0.333333, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
+border_width_left = 2
+border_width_right = 2
+border_color = Color( 0.0588235, 0.317647, 0.431373, 1 )
 expand_margin_right = 5.0
 
 [sub_resource type="StyleBoxTexture" id=23]
@@ -255,8 +255,6 @@ bg_color = Color( 0.0666667, 0.439216, 0.596078, 1 )
 border_width_left = 5
 border_width_right = 5
 border_color = Color( 0.0666667, 0.439216, 0.596078, 1 )
-corner_radius_top_left = 5
-corner_radius_top_right = 5
 expand_margin_left = 5.0
 expand_margin_top = 2.0
 expand_margin_bottom = 2.0
@@ -379,13 +377,13 @@ ProgressBar/styles/bg = SubResource( 19 )
 ProgressBar/styles/fg = SubResource( 20 )
 TabContainer/colors/font_color_bg = Color( 0.69, 0.69, 0.69, 1 )
 TabContainer/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-TabContainer/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+TabContainer/colors/font_color_fg = Color( 1, 1, 1, 1 )
 TabContainer/constants/hseparation = 4
 TabContainer/constants/label_valign_bg = 2
 TabContainer/constants/label_valign_fg = 0
 TabContainer/constants/side_margin = 8
 TabContainer/constants/top_margin = 24
-TabContainer/fonts/font = null
+TabContainer/fonts/font = SubResource( 30 )
 TabContainer/icons/decrement = null
 TabContainer/icons/decrement_highlight = null
 TabContainer/icons/increment = null
