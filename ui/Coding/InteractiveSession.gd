@@ -114,20 +114,24 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	print(json.result["summary"])
 #	print(json.result)
 	var buildResult = ""
+	var debugOutput = ""
 	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
 		# TODO: Display the fatal error better
 		buildResult = "error"
-		debug_output.text = json.result["collectors"][1]["longrepr"] + "\n\n"
+		debugOutput = json.result["collectors"][1]["longrepr"] +  "\n\n" 
 	elif json.result["summary"].has("passed") && json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
-		debug_output.text = "Congratulations! Success."
+		debugOutput = "Congratulations! Success."
 	else:
 		buildResult = "failed"
 		# Loop through results
 		for result in json.result["tests"]:
 			# Find only those that didn't pass
 			if result["call"]["outcome"] != "passed":
-				debug_output.text += result["call"]["crash"]["message"] + "\n"
+				debugOutput += result["call"]["crash"]["message"] + "\n"
+	
+	debug_output.text = debugOutput
+	debug_output.cursor_set_line(debug_output.get_line_count())
 	show_alert(buildResult)
 
 func _make_post_request(url, data_to_send, use_ssl):
