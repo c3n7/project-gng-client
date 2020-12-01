@@ -110,11 +110,12 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
 	var json = JSON.parse(body.get_string_from_utf8())
 	print(json.result["summary"])
-	print(json.result)
+#	print(json.result)
 	var buildResult = ""
 	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
 		# TODO: Display the fatal error better
 		buildResult = "error"
+		print(json.result["collectors"][1])
 	elif json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
 	else:
