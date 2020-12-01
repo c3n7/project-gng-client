@@ -57,14 +57,14 @@ class TestCalculate(unittest.TestCase):
 		self.calc = Calculate()
 
 	def test_add_method_returns_correct_result(self):
-		self.assertEqual(5, self.calc.add(3, 2))
+		self.assertEqual(5, self.calc.add(3, 2), 'Addition function not working')
 
 	def test_subtract_method_returns_correct_result(self):
-		self.assertEqual(7, self.calc.subtract(10, 3))
+		self.assertEqual(7, self.calc.subtract(10, 3), 'Subtraction function not working')
 		
 	def test_make_multiplier_makes_multiplier(self):
 		doubler = self.calc.make_multiplier_of(2)
-		self.assertEqual(18, doubler(9))
+		self.assertEqual(18, doubler(9), 'closure not working')
 
 if __name__ == '__main__':
 	unittest.main()
@@ -117,11 +117,17 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
 		# TODO: Display the fatal error better
 		buildResult = "error"
-		debug_output.text = json.result["collectors"][1]["longrepr"]
-	elif json.result["summary"]["collected"] == json.result["summary"]["passed"]:
+		debug_output.text = json.result["collectors"][1]["longrepr"] + "\n\n"
+	elif json.result["summary"].has("passed") && json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
+		debug_output.text = "Congratulations! Success."
 	else:
 		buildResult = "failed"
+		# Loop through results
+		for result in json.result["tests"]:
+			# Find only those that didn't pass
+			if result["call"]["outcome"] != "passed":
+				debug_output.text += result["call"]["crash"]["message"] + "\n"
 	show_alert(buildResult)
 
 func _make_post_request(url, data_to_send, use_ssl):
