@@ -1,6 +1,7 @@
 extends Control
 
 onready var coding_ground = $Full/Right/Top/CodingGround
+onready var debug_output = $Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
 
 var keywords = [
 	"False", "await", "else", "import", "pass",
@@ -108,6 +109,7 @@ func show_alert(image):
 	
 func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
+	debug_output.text = ""
 	var json = JSON.parse(body.get_string_from_utf8())
 	print(json.result["summary"])
 #	print(json.result)
@@ -115,7 +117,7 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
 		# TODO: Display the fatal error better
 		buildResult = "error"
-		print(json.result["collectors"][1])
+		debug_output.text = json.result["collectors"][1]["longrepr"]
 	elif json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
 	else:
