@@ -78,19 +78,24 @@ func show_alert(image):
 		yield($Alert/AnimationPlayer, "animation_finished")
 	
 	# HACK: Add padding better
-	var labelText = ""	
+	var labelText = ""
 	match image:
 		"success":
 			$Alert/Panel/Building.hide()
 			$Alert/Panel/Failure.hide()
 			$Alert/Panel/Success.show()
 			labelText = "   Success"
-		# TODO: Failed "compilations" don't show, do this better
 		"failed":
 			$Alert/Panel/Building.hide()
 			$Alert/Panel/Failure.show()
 			$Alert/Panel/Success.hide()
 			labelText = "   Failed"
+		# TODO: Show Stack Trace
+		"error":
+			$Alert/Panel/Building.hide()
+			$Alert/Panel/Failure.show()
+			$Alert/Panel/Success.hide()
+			labelText = "   Error"
 		"building":
 			$Alert/Panel/Building.show()
 			$Alert/Panel/Failure.hide()
@@ -105,10 +110,12 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
 	var json = JSON.parse(body.get_string_from_utf8())
 	print(json.result["summary"])
-	print(json.result["tests"][0]["keywords"])
-	print(json.result["tests"][0]["outcome"])
+	print(json.result)
 	var buildResult = ""
-	if json.result["summary"]["collected"] == json.result["summary"]["passed"]:
+	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
+		# TODO: Display the fatal error better
+		buildResult = "error"
+	elif json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
 	else:
 		buildResult = "failed"
