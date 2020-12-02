@@ -35,8 +35,8 @@ text = "1
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 471.0
-margin_right = 647.0
+margin_left = 419.0
+margin_right = 595.0
 margin_bottom = 108.0
 size_flags_horizontal = 10
 
@@ -70,7 +70,6 @@ margin_bottom = 108.0
 texture = ExtResource( 2 )
 
 [node name="Pause" type="TextureButton" parent="HBoxContainer"]
-visible = false
 margin_left = 599.0
 margin_right = 647.0
 margin_bottom = 108.0

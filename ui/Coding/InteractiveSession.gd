@@ -91,7 +91,7 @@ func show_alert(image):
 			$Alert/Panel/Failure.show()
 			$Alert/Panel/Success.hide()
 			labelText = "   Failed"
-		# TODO: Show Stack Trace
+		# TODO: Show help button
 		"error":
 			$Alert/Panel/Building.hide()
 			$Alert/Panel/Failure.show()
@@ -116,7 +116,6 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	var buildResult = ""
 	var debugOutput = ""
 	if json.result["summary"]["collected"] == 0 || json.result["summary"]["total"] == 0:
-		# TODO: Display the fatal error better
 		buildResult = "error"
 		debugOutput = json.result["collectors"][1]["longrepr"] +  "\n\n" 
 	elif json.result["summary"].has("passed") && json.result["summary"]["collected"] == json.result["summary"]["passed"]:
