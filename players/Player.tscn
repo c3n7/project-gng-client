@@ -24,6 +24,16 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 15 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "dead",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "run",
@@ -42,16 +52,6 @@ animations = [ {
 "frames": [ ExtResource( 8 ) ],
 "loop": false,
 "name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": false,
-"name": "hurt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": false,
-"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 9 ) ],
@@ -77,9 +77,11 @@ animation = "swim"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 300, 0 )
 current = true
 drag_margin_h_enabled = true
 drag_margin_left = 0.6
+drag_margin_right = 1.0
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )

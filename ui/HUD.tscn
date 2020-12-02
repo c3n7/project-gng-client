@@ -14,21 +14,20 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = -20.0
-margin_bottom = 108.0
+margin_right = -699.0
+margin_bottom = 128.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1326.0
+margin_right = 647.0
 margin_bottom = 108.0
 
 [node name="ScoreLabel" type="Label" parent="HBoxContainer"]
-margin_right = 1090.0
+margin_right = 22.0
 margin_bottom = 108.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 custom_constants/line_spacing = 0
@@ -36,9 +35,10 @@ text = "1
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 1094.0
-margin_right = 1270.0
+margin_left = 471.0
+margin_right = 647.0
 margin_bottom = 108.0
+size_flags_horizontal = 10
 
 [node name="L1" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
 margin_right = 32.0
@@ -69,14 +69,10 @@ margin_right = 176.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer"]
-margin_left = 1274.0
-margin_right = 1274.0
-margin_bottom = 108.0
-
 [node name="Pause" type="TextureButton" parent="HBoxContainer"]
-margin_left = 1278.0
-margin_right = 1326.0
+visible = false
+margin_left = 599.0
+margin_right = 647.0
 margin_bottom = 108.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
