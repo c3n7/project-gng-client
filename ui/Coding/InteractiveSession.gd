@@ -1,6 +1,5 @@
 extends Control
 
-signal show_balloon(quantity)
 signal build
 
 onready var coding_ground = $Full/Right/Top/CodingGround
@@ -19,6 +18,8 @@ var keywords = [
 func _ready():
 	for keyword in keywords:
 		coding_ground.add_color_region("#", '', Color("#686868"))
+		coding_ground.add_color_region('"', '"', Color('#CC342B'))
+		coding_ground.add_color_region("'", "'", Color('#CC342B'))
 		coding_ground.add_keyword_color(keyword, Color("#fba922"))
 
 
