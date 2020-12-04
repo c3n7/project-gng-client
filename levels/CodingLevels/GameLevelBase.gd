@@ -5,6 +5,7 @@ export (GDScript) var coding_resources
 func _ready():
 	var c = coding_resources.new()
 	$CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround.text = c.code
+	$CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround.text = c.code
 	$CanvasLayer/InteractiveSession.tests = c.tests
 
 func _on_InteractiveSession_show_balloon(quantity):
