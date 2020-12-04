@@ -70,6 +70,7 @@ func spawn_balloon(type, pos, text):
 	var b = Balloon.instance()
 	b.init(type, pos, text)
 	$Balloons.call_deferred("add_child", b)
+	b.connect('pickup', self, '_on_Balloon_pickup')
 #	print(str(10 *rand_range(0, 1)))
 
 func spawn_water():
@@ -100,6 +101,11 @@ func _on_Player_dead():
 
 func _on_Collectible_pickup():
 	score += 1
+	$CollectibleSound.play()
+	emit_signal('score_changed', score)
+
+func _on_Balloon_pickup():
+	score += 10
 	$CollectibleSound.play()
 	emit_signal('score_changed', score)
 
