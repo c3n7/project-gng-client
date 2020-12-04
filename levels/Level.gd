@@ -6,6 +6,7 @@ export (PackedScene) var player
 export (PackedScene) var Collectible
 export (PackedScene) var Water
 export (PackedScene) var Door
+export (PackedScene) var Balloon
 
 onready var pickups = $Collectibles
 onready var water = $Water
@@ -46,6 +47,8 @@ func _ready():
 	
 	spawn_door()
 	
+	spawn_balloon()
+	
 	# Spawn the player
 	var p = player.instance()
 	p.spawn_pos = $PlayerSpawn.position
@@ -64,6 +67,12 @@ func spawn_pickups():
 			c.init(type, pos + pickups.cell_size / 2)
 			call_deferred("add_child", c)
 			c.connect('pickup', self, '_on_Collectible_pickup')
+
+func spawn_balloon():
+	var b = Balloon.instance()
+	b.init('blue', Vector2(160, -1000))
+	$Balloons.call_deferred("add_child", b)
+#	print(str(10 *rand_range(0, 1)))
 
 func spawn_water():
 	for cell in water.get_used_cells():

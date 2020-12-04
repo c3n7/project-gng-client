@@ -1,5 +1,7 @@
 extends Control
 
+signal show_balloon(quantity)
+
 onready var coding_ground = $Full/Right/Top/CodingGround
 onready var debug_output = $Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
 
@@ -40,6 +42,8 @@ class Calculate(object):
 
 
 func _on_Build_pressed():
+	# TODO: Remove this line
+	emit_signal("show_balloon", 1)
 	if not safe_to_make_http_request:
 		# TODO: Do this better
 		$Alert/HBoxContainer/Label.text = "   Wait"
