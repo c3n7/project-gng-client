@@ -12,4 +12,7 @@ func _ready():
 
 
 func _on_InteractiveSession_show_balloon(quantity):
-	$BlueCoding01.spawn_balloon('blue', spawn_point, 'Voila')
+	for _i in range(quantity):
+		var player = $BlueCoding01/Player.get_child(0)
+		spawn_point = Vector2(player.position.x, rand_range(-100, -1000))
+		$BlueCoding01.spawn_balloon('blue', spawn_point, 'Voila')

@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="173.23999mm"
-   height="79.848114mm"
-   viewBox="0 0 173.23999 79.848114"
+   width="255.29788mm"
+   height="57.340008mm"
+   viewBox="0 0 255.29788 57.340008"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="baloon.svg">
+   sodipodi:docname="balloon.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.90080389"
-     inkscape:cx="231.94816"
-     inkscape:cy="155.85869"
+     inkscape:zoom="0.62194125"
+     inkscape:cx="453.08042"
+     inkscape:cy="453.78138"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -56,22 +56,24 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-4.527568,-35.785423)">
+     transform="translate(34.913874,-35.785423)">
     <g
        id="g928"
        inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
        inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400">
+       inkscape:export-ydpi="400"
+       transform="translate(-5.3592864,-23.037275)">
       <ellipse
          style="fill:#a2e1e7;fill-opacity:1;stroke:#5dc3ce;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
          id="path833"
-         cx="64.787445"
-         cy="63.513657"
+         cx="-75.155334"
+         cy="64.787445"
          rx="15.900584"
          ry="27.296181"
          inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
          inkscape:export-xdpi="400"
-         inkscape:export-ydpi="400" />
+         inkscape:export-ydpi="400"
+         transform="rotate(-90)" />
       <g
          id="g860"
          transform="translate(-0.43861523,-1.0471503)"
@@ -104,17 +106,19 @@
        id="g944"
        inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonYellow.png"
        inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400">
+       inkscape:export-ydpi="400"
+       transform="translate(13.738464,-22.508108)">
       <ellipse
          style="fill:#f3e894;fill-opacity:1;stroke:#d7c745;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
          id="ellipse886"
-         cx="112.3035"
-         cy="63.513657"
+         cx="-74.626167"
+         cy="112.3035"
          rx="15.900584"
          ry="27.296181"
          inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
          inkscape:export-xdpi="400"
-         inkscape:export-ydpi="400" />
+         inkscape:export-ydpi="400"
+         transform="rotate(-90)" />
       <g
          id="g894"
          transform="translate(47.077444,-1.0471503)"
@@ -147,17 +151,19 @@
        id="g952"
        inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonRed.png"
        inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400">
+       inkscape:export-ydpi="400"
+       transform="translate(31.220847,-22.508108)">
       <ellipse
          style="fill:#ec9da0;fill-opacity:1;stroke:#bf4348;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
          id="ellipse898"
-         cx="161.43492"
-         cy="63.513657"
+         cx="-74.626167"
+         cy="161.43492"
          rx="15.900584"
          ry="27.296181"
          inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
          inkscape:export-xdpi="400"
-         inkscape:export-ydpi="400" />
+         inkscape:export-ydpi="400"
+         transform="rotate(-90)" />
       <g
          id="g906"
          transform="translate(96.208862,-1.0471503)"
@@ -190,17 +196,19 @@
        id="g936"
        inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonGreen.png"
        inkscape:export-xdpi="400"
-       inkscape:export-ydpi="400">
+       inkscape:export-ydpi="400"
+       transform="translate(-28.045845,-22.508108)">
       <ellipse
          style="fill:#acdcc4;fill-opacity:1;stroke:#409f6e;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
          id="ellipse910"
-         cx="20.860205"
-         cy="63.513657"
+         cx="-74.626167"
+         cy="20.860205"
          rx="15.900584"
          ry="27.296181"
          inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
          inkscape:export-xdpi="400"
-         inkscape:export-ydpi="400" />
+         inkscape:export-ydpi="400"
+         transform="rotate(-90)" />
       <g
          id="g918"
          transform="translate(-44.365856,-1.0471503)"
