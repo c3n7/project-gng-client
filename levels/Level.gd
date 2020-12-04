@@ -47,8 +47,6 @@ func _ready():
 	
 	spawn_door()
 	
-	spawn_balloon()
-	
 	# Spawn the player
 	var p = player.instance()
 	p.spawn_pos = $PlayerSpawn.position
@@ -68,9 +66,9 @@ func spawn_pickups():
 			call_deferred("add_child", c)
 			c.connect('pickup', self, '_on_Collectible_pickup')
 
-func spawn_balloon():
+func spawn_balloon(type, pos, text):
 	var b = Balloon.instance()
-	b.init('blue', Vector2(160, -1000))
+	b.init(type, pos, text)
 	$Balloons.call_deferred("add_child", b)
 #	print(str(10 *rand_range(0, 1)))
 
