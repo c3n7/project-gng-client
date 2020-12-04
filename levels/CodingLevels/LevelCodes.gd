@@ -1,6 +1,4 @@
-extends Control
-
-var classes_code = """# Calculate Class
+var code = """# Calculate Class
 class Calculate(object):
 
 	def add(self, x, y):
@@ -16,7 +14,7 @@ class Calculate(object):
 		return multiplier
 """
 
-var classes_tests = """
+var tests = """
 import unittest
 from calculate import Calculate
 

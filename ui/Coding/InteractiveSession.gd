@@ -1,4 +1,4 @@
-extends "res://levels/CodingLevels/LevelCodes.gd"
+extends Control
 
 signal show_balloon(quantity)
 
@@ -15,6 +15,7 @@ var keywords = [
 	"async", "elif", "if", "or", "yield"]
 
 var safe_to_make_http_request = true
+var tests
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,8 +25,6 @@ func _ready():
 	for keyword in keywords:
 		coding_ground.add_color_region("#", '', Color("#686868"))
 		coding_ground.add_keyword_color(keyword, Color("#fba922"))
-
-	coding_ground.text = classes_code
 
 
 func _on_Build_pressed():
@@ -38,7 +37,7 @@ func _on_Build_pressed():
 	show_alert("building")
 	var code = coding_ground.text
 
-	var test = classes_tests
+	var test = tests
 	_make_post_request("http://127.0.0.1:5000/code/",
 		{"code":code, "test":test}, false)
 
