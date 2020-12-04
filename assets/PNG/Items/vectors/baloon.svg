@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="173.23999mm"
+   height="79.848114mm"
+   viewBox="0 0 173.23999 79.848114"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="baloon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.90080389"
+     inkscape:cx="231.94816"
+     inkscape:cy="155.85869"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.527568,-35.785423)">
+    <g
+       id="g928"
+       inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+       inkscape:export-xdpi="400"
+       inkscape:export-ydpi="400">
+      <ellipse
+         style="fill:#a2e1e7;fill-opacity:1;stroke:#5dc3ce;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
+         id="path833"
+         cx="64.787445"
+         cy="63.513657"
+         rx="15.900584"
+         ry="27.296181"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <g
+         id="g860"
+         transform="translate(-0.43861523,-1.0471503)"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400">
+        <g
+           id="g884"
+           transform="translate(0.54038176,0.67980051)">
+          <path
+             style="fill:#5dc3ce;fill-opacity:1;stroke-width:0.264583"
+             d="m 61.836905,114.94256 1.5875,1.05833 1.5875,-0.52916 1.5875,0.52916 1.5875,-1.05833 -3.175,-3.175 -3.175,3.175"
+             id="path981" />
+          <path
+             style="fill:#63d2de;fill-opacity:1;stroke-width:0.264583"
+             d="m 68.716071,109.91548 -1.5875,-0.52917 -1.058333,-1.32292 h -2.116667 l -0.79375,1.32292 -1.852083,0.52917 -0.529167,1.85208 1.058334,1.32292 v 1.85208 l 3.175,-3.175 3.175,3.175 v -1.85208 l 1.058333,-1.32292 -0.529167,-1.85208"
+             id="path983" />
+        </g>
+      </g>
+      <path
+         style="fill:none;stroke:#5dc3ce;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 63.953569,108.06339 c 0,0 -9.32434,-0.87058 -3.628367,-7.74976 4.475596,-4.436482 5.307273,-9.264511 5.307273,-9.264511 0,0 -1.319735,2.272593 -3.953794,8.858069 -4.018079,6.967832 2.274888,8.156202 2.274888,8.156202 z"
+         id="path862"
+         sodipodi:nodetypes="ccccc"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+    </g>
+    <g
+       id="g944"
+       inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonYellow.png"
+       inkscape:export-xdpi="400"
+       inkscape:export-ydpi="400">
+      <ellipse
+         style="fill:#f3e894;fill-opacity:1;stroke:#d7c745;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
+         id="ellipse886"
+         cx="112.3035"
+         cy="63.513657"
+         rx="15.900584"
+         ry="27.296181"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <g
+         id="g894"
+         transform="translate(47.077444,-1.0471503)"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400">
+        <g
+           id="g892"
+           transform="translate(0.54038176,0.67980051)">
+          <path
+             style="fill:#d7c745;fill-opacity:1;stroke-width:0.264583"
+             d="m 61.836905,114.94256 1.5875,1.05833 1.5875,-0.52916 1.5875,0.52916 1.5875,-1.05833 -3.175,-3.175 -3.175,3.175"
+             id="path888" />
+          <path
+             style="fill:#ead94c;fill-opacity:1;stroke-width:0.264583"
+             d="m 68.716071,109.91548 -1.5875,-0.52917 -1.058333,-1.32292 h -2.116667 l -0.79375,1.32292 -1.852083,0.52917 -0.529167,1.85208 1.058334,1.32292 v 1.85208 l 3.175,-3.175 3.175,3.175 v -1.85208 l 1.058333,-1.32292 -0.529167,-1.85208"
+             id="path890" />
+        </g>
+      </g>
+      <path
+         style="fill:none;stroke:#d7c745;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 111.46963,108.06339 c 0,0 7.82002,-1.98616 5.43753,-5.97028 -8.12942,-6.630757 -3.75863,-11.043991 -3.75863,-11.043991 0,0 0.33449,3.009246 2.64866,8.586681 1.90923,7.12536 -4.32756,8.42759 -4.32756,8.42759 z"
+         id="path896"
+         sodipodi:nodetypes="ccccc"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+    </g>
+    <g
+       id="g952"
+       inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonRed.png"
+       inkscape:export-xdpi="400"
+       inkscape:export-ydpi="400">
+      <ellipse
+         style="fill:#ec9da0;fill-opacity:1;stroke:#bf4348;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
+         id="ellipse898"
+         cx="161.43492"
+         cy="63.513657"
+         rx="15.900584"
+         ry="27.296181"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <g
+         id="g906"
+         transform="translate(96.208862,-1.0471503)"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400">
+        <g
+           id="g904"
+           transform="translate(0.54038176,0.67980051)">
+          <path
+             style="fill:#bf4348;fill-opacity:1;stroke-width:0.264583"
+             d="m 61.836905,114.94256 1.5875,1.05833 1.5875,-0.52916 1.5875,0.52916 1.5875,-1.05833 -3.175,-3.175 -3.175,3.175"
+             id="path900" />
+          <path
+             style="fill:#dd4e54;fill-opacity:1;stroke-width:0.264583"
+             d="m 68.716071,109.91548 -1.5875,-0.52917 -1.058333,-1.32292 h -2.116667 l -0.79375,1.32292 -1.852083,0.52917 -0.529167,1.85208 1.058334,1.32292 v 1.85208 l 3.175,-3.175 3.175,3.175 v -1.85208 l 1.058333,-1.32292 -0.529167,-1.85208"
+             id="path902" />
+        </g>
+      </g>
+      <path
+         style="fill:none;stroke:#bf4348;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 160.60105,108.06339 c 0,0 -4.10546,-4.64862 1.59051,-11.527803 4.4756,-4.436482 0.0884,-5.486468 0.0884,-5.486468 0,0 1.33921,2.504408 -1.29485,9.089881 -4.01808,6.96784 -0.38405,7.92439 -0.38405,7.92439 z"
+         id="path908"
+         sodipodi:nodetypes="ccccc"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+    </g>
+    <g
+       id="g936"
+       inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonGreen.png"
+       inkscape:export-xdpi="400"
+       inkscape:export-ydpi="400">
+      <ellipse
+         style="fill:#acdcc4;fill-opacity:1;stroke:#409f6e;stroke-width:0.864105;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:13.1;stroke-opacity:1"
+         id="ellipse910"
+         cx="20.860205"
+         cy="63.513657"
+         rx="15.900584"
+         ry="27.296181"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+      <g
+         id="g918"
+         transform="translate(-44.365856,-1.0471503)"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400">
+        <g
+           id="g916"
+           transform="translate(0.54038176,0.67980051)">
+          <path
+             style="fill:#409f6e;fill-opacity:1;stroke-width:0.264583"
+             d="m 61.836905,114.94256 1.5875,1.05833 1.5875,-0.52916 1.5875,0.52916 1.5875,-1.05833 -3.175,-3.175 -3.175,3.175"
+             id="path912" />
+          <path
+             style="fill:#49b47e;fill-opacity:1;stroke-width:0.264583"
+             d="m 68.716071,109.91548 -1.5875,-0.52917 -1.058333,-1.32292 h -2.116667 l -0.79375,1.32292 -1.852083,0.52917 -0.529167,1.85208 1.058334,1.32292 v 1.85208 l 3.175,-3.175 3.175,3.175 v -1.85208 l 1.058333,-1.32292 -0.529167,-1.85208"
+             id="path914" />
+        </g>
+      </g>
+      <path
+         style="fill:none;stroke:#409f6e;stroke-width:0.665;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 20.026328,108.06339 c 0,0 -3.612009,-5.96447 -0.723706,-9.721652 4.475596,-4.436486 2.402612,-7.292619 2.402612,-7.292619 0,0 -3.20665,1.491111 -2.13481,10.770111 0.422866,1.97937 0.455904,6.24416 0.455904,6.24416 z"
+         id="path920"
+         sodipodi:nodetypes="ccccc"
+         inkscape:export-filename="/home/timo/Documents/Projects/school-projects/project-gng/project-gng-client/assets/PNG/Items/baloonBlue.png"
+         inkscape:export-xdpi="400"
+         inkscape:export-ydpi="400" />
+    </g>
+  </g>
+</svg>

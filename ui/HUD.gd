@@ -24,5 +24,6 @@ func _on_score_changed(value):
 
 
 func _on_Pause_pressed():
+	# TODO: Pause input controls
 	emit_signal("pause")
 	
