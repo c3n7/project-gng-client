@@ -23,8 +23,6 @@ func _ready():
 
 
 func _on_Build_pressed():
-	# TODO: Remove this line
-	emit_signal("show_balloon", 1)
 	emit_signal("build")
 
 func show_alert(image):
@@ -45,7 +43,6 @@ func show_alert(image):
 			$Alert/Panel/Failure.show()
 			$Alert/Panel/Success.hide()
 			labelText = "   Failed"
-		# TODO: Show help button
 		"error":
 			$Alert/Panel/Building.hide()
 			$Alert/Panel/Failure.show()

@@ -13,7 +13,7 @@ class TestCalculate(unittest.TestCase):
 		sys.stdout = capturedOutput                     # and redirect stdout.
 		printer()                                 # Call function.
 		sys.stdout = sys.__stdout__                     # Reset redirect.
-		self.assertEqual("test", capturedOutput.getvalue().strip().lower())
+		self.assertEqual("hello world!", capturedOutput.getvalue().strip().lower())
 
 
 if __name__ == '__main__':

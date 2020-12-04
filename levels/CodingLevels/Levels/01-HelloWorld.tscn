@@ -17,4 +17,3 @@ coding_resources_object = ExtResource( 4 )
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="build" from="CanvasLayer/InteractiveSession" to="." method="_on_InteractiveSession_build"]
-[connection signal="show_balloon" from="CanvasLayer/InteractiveSession" to="." method="_on_InteractiveSession_show_balloon"]
