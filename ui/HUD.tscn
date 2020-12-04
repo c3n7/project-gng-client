@@ -14,18 +14,23 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 margin_left = 20.0
 margin_top = 20.0
-margin_right = -699.0
-margin_bottom = 128.0
+margin_right = -20.0
+margin_bottom = 108.0
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 647.0
+margin_right = 1326.0
 margin_bottom = 108.0
 
-[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+[node name="Left" type="HBoxContainer" parent="HBoxContainer"]
+margin_right = 661.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer/Left"]
 margin_right = 22.0
 margin_bottom = 108.0
 size_flags_vertical = 3
@@ -34,45 +39,51 @@ custom_constants/line_spacing = 0
 text = "1
 "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
-margin_left = 419.0
-margin_right = 595.0
+[node name="Lives" type="HBoxContainer" parent="HBoxContainer/Left"]
+margin_left = 433.0
+margin_right = 609.0
 margin_bottom = 108.0
 size_flags_horizontal = 10
 
-[node name="L1" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="L1" type="TextureRect" parent="HBoxContainer/Left/Lives"]
 margin_right = 32.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="L2" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="L2" type="TextureRect" parent="HBoxContainer/Left/Lives"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="L3" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="L3" type="TextureRect" parent="HBoxContainer/Left/Lives"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="L4" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="L4" type="TextureRect" parent="HBoxContainer/Left/Lives"]
 margin_left = 108.0
 margin_right = 140.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="L5" type="TextureRect" parent="HBoxContainer/HBoxContainer"]
+[node name="L5" type="TextureRect" parent="HBoxContainer/Left/Lives"]
 margin_left = 144.0
 margin_right = 176.0
 margin_bottom = 108.0
 texture = ExtResource( 2 )
 
-[node name="Pause" type="TextureButton" parent="HBoxContainer"]
-margin_left = 599.0
-margin_right = 647.0
+[node name="Pause" type="TextureButton" parent="HBoxContainer/Left"]
+margin_left = 613.0
+margin_right = 661.0
 margin_bottom = 108.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
-[connection signal="pressed" from="HBoxContainer/Pause" to="." method="_on_Pause_pressed"]
+
+[node name="Blank" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 665.0
+margin_right = 1326.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+[connection signal="pressed" from="HBoxContainer/Left/Pause" to="." method="_on_Pause_pressed"]

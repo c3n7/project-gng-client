@@ -3,11 +3,11 @@ extends MarginContainer
 signal pause
 
 onready var life_counter = [
-	$HBoxContainer/HBoxContainer/L1,
-	$HBoxContainer/HBoxContainer/L2,
-	$HBoxContainer/HBoxContainer/L3,
-	$HBoxContainer/HBoxContainer/L4,
-	$HBoxContainer/HBoxContainer/L5
+	$HBoxContainer/Left/Lives/L1,
+	$HBoxContainer/Left/Lives/L2,
+	$HBoxContainer/Left/Lives/L3,
+	$HBoxContainer/Left/Lives/L4,
+	$HBoxContainer/Left/Lives/L5
 ]
 
 
@@ -20,7 +20,7 @@ func _on_Player_life_changed(value):
 		life_counter[life].visible = value > life
 
 func _on_score_changed(value):
-	$HBoxContainer/ScoreLabel.text = str(value)
+	$HBoxContainer/Left/ScoreLabel.text = str(value)
 
 
 func _on_Pause_pressed():
