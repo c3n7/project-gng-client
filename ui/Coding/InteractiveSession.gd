@@ -1,4 +1,4 @@
-extends Control
+extends "res://levels/CodingLevels/LevelCodes.gd"
 
 signal show_balloon(quantity)
 
@@ -22,23 +22,10 @@ func _ready():
 	if error != OK:
 		push_error("Error while connecting signal")
 	for keyword in keywords:
+		coding_ground.add_color_region("#", '', Color("#686868"))
 		coding_ground.add_keyword_color(keyword, Color("#fba922"))
 
-	coding_ground.text = """
-class Calculate(object):
-
-	def add(self, x, y):
-		return x + y
-
-	def subtract(self, x, y):
-		return x - y
-	
-	def make_multiplier_of(self, n):
-		def multiplier(x):
-			return x * n
-		
-		return multiplier
-"""
+	coding_ground.text = classes_code
 
 
 func _on_Build_pressed():
@@ -51,28 +38,7 @@ func _on_Build_pressed():
 	show_alert("building")
 	var code = coding_ground.text
 
-	var test = """
-import unittest
-from calculate import Calculate
-
-
-class TestCalculate(unittest.TestCase):
-	def setUp(self):
-		self.calc = Calculate()
-
-	def test_add_method_returns_correct_result(self):
-		self.assertEqual(5, self.calc.add(3, 2), 'Addition function not working')
-
-	def test_subtract_method_returns_correct_result(self):
-		self.assertEqual(7, self.calc.subtract(10, 3), 'Subtraction function not working')
-		
-	def test_make_multiplier_makes_multiplier(self):
-		doubler = self.calc.make_multiplier_of(2)
-		self.assertEqual(18, doubler(9), 'closure not working')
-
-if __name__ == '__main__':
-	unittest.main()
-"""
+	var test = classes_tests
 	_make_post_request("http://127.0.0.1:5000/code/",
 		{"code":code, "test":test}, false)
 
