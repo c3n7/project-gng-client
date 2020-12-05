@@ -33,7 +33,7 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
 	debug_output.text = ""
 	var json = JSON.parse(body.get_string_from_utf8())
-	print(json.result["summary"])
+	print_debug(json.result["summary"])
 #	print(json.result)
 	var buildResult = ""
 	var debugOutput = ""
