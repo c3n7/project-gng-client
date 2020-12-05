@@ -79,4 +79,5 @@ func _get_code_to_test():
 func success_func():
 	var player = game_level.get_node("Player").get_child(0)
 	var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-	game_level.spawn_balloon('green', spawn_point, 'variables')
+	var output = "john doe 1997 " + str(OS.get_date()["year"] - 1997)
+	game_level.spawn_balloon('green', spawn_point, output)

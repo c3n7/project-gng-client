@@ -1,4 +1,11 @@
-var code = "print(string)"
+var year = OS.get_date()["year"]
+var age = year - 1997
+var code = """
+name = "john doe"
+yob = 1997
+age = """ + str(year) + """ - 1997
+print(name, yob, age)
+"""
 
 var tests = """
 import io
@@ -13,7 +20,8 @@ class TestCalculate(unittest.TestCase):
 		sys.stdout = capturedOutput                     # and redirect stdout.
 		printer()                                 # Call function.
 		sys.stdout = sys.__stdout__                     # Reset redirect.
-		self.assertEqual("variables", capturedOutput.getvalue().strip().lower())
+		expected = 'john doe 1997 """ + str(age) + """'
+		self.assertEqual(expected, capturedOutput.getvalue().strip().lower())
 
 
 if __name__ == '__main__':
