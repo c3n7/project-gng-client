@@ -24,6 +24,7 @@ outline_color = Color( 1, 1, 1, 0.454902 )
 font_data = SubResource( 4 )
 
 [node name="Balloon" type="RigidBody2D"]
+gravity_scale = 0.1
 contact_monitor = true
 script = ExtResource( 1 )
 

@@ -5,6 +5,7 @@
 [ext_resource path="res://ui/Coding/InteractiveSession.gd" type="Script" id=3]
 [ext_resource path="res://ui/Coding/Alert.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/whoosh.wav" type="AudioStream" id=5]
+[ext_resource path="res://themes/output_blue.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
@@ -12,9 +13,6 @@ bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 12
 font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0666667, 0.439216, 0.596078, 1 )
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf"
@@ -119,8 +117,8 @@ __meta__ = {
 [node name="Output" type="TextEdit" parent="Full/Right/Bottom/TabContainer/Build/OutputMargin"]
 margin_right = 671.0
 margin_bottom = 352.0
-custom_styles/read_only = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/read_only = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
 custom_fonts/font = SubResource( 5 )
 readonly = true
 show_line_numbers = true

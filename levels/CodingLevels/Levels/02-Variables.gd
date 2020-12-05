@@ -6,6 +6,7 @@ var safe_to_make_http_request = true
 onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
 var coding_resources
+onready var game_level = $GreenCoding01
 
 func _ready():
 	var error = $HTTPRequest.connect("request_completed", self, "_on_request_completed")
@@ -43,9 +44,7 @@ func _on_request_completed(_result, _response_code, _headers, body):
 		buildResult = "success"
 		debugOutput = "Congratulations! Success."
 		# TODO: Move this somewhere better, like its own function
-		var player = $BlueCoding01/Player.get_child(0)
-		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		$BlueCoding01.spawn_balloon('blue', spawn_point, 'Hello World!')
+		success_func()
 	else:
 		# TODO: Show help button
 		buildResult = "failed"
@@ -70,8 +69,14 @@ func _make_post_request(url, data_to_send, use_ssl):
 		push_error("An error in HTTP request")
 
 func _get_code_to_test():
-	var pre = """def printer():
-	"""
+	var pre = "def printer():"
+	var body = ""
+	for i in range(coding_ground.get_line_count()):
+		body += "    " + coding_ground.get_line(i) + "\n"
 	var post = ""
-	return pre + coding_ground.text + "\n" + post
+	return pre + "\n" + body + "\n" + post
 	
+func success_func():
+	var player = game_level.get_node("Player").get_child(0)
+	var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
+	game_level.spawn_balloon('green', spawn_point, 'variables')
