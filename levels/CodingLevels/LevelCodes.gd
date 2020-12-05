@@ -16,7 +16,7 @@ class Calculate(object):
 
 var tests = """
 import unittest
-from calculate import Calculate
+from user_code import Calculate
 
 
 class TestCalculate(unittest.TestCase):

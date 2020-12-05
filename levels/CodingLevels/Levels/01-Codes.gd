@@ -4,7 +4,7 @@ var tests = """
 import io
 import sys
 import unittest
-from calculate import printer
+from user_code import printer
 
 
 class TestCalculate(unittest.TestCase):
