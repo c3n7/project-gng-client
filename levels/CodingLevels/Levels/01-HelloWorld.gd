@@ -39,7 +39,6 @@ func _get_code_to_test():
 	
 
 func _success(build_status):
-	# TODO: Move this somewhere better, like its own function
 	if build_status == "success":
 		var player = $BlueCoding01/Player.get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
