@@ -22,10 +22,6 @@ func _on_request_completed(_result, _response_code, _headers, body):
 	elif json.result["summary"].has("passed") && json.result["summary"]["collected"] == json.result["summary"]["passed"]:
 		buildResult = "success"
 		debugOutput = "Congratulations! Success."
-		# TODO: Move this somewhere better, like its own function
-		var player = $BlueCoding01/Player.get_child(0)
-		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		$BlueCoding01.spawn_balloon('blue', spawn_point, 'Hello World!')
 	else:
 		# TODO: Show help button
 		buildResult = "failed"
@@ -46,3 +42,12 @@ func _make_post_request(url, data_to_send, use_ssl):
 	safe_to_make_http_request = false
 	if error != OK:
 		push_error("An error in HTTP request")
+
+func _test_code(code, test, alert_label, interactive_session):
+	if not safe_to_make_http_request:
+		# TODO: Do this better
+		alert_label.text = "   Wait"
+		return
+	interactive_session.show_alert("building")
+	_make_post_request("http://127.0.0.1:5000/code/",
+		{"code":code, "test":test}, false)
