@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/Blue/levels/BlueCoding01.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/CodingLevels/Levels/01-HelloWorld.gd" type="Script" id=2]
 [ext_resource path="res://ui/Coding/InteractiveSession.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/CodingLevels/Levels/01-Codes.gd" type="Script" id=4]
+[ext_resource path="res://themes/blue_theme.tres" type="Theme" id=5]
+[ext_resource path="res://themes/output_blue.tres" type="Theme" id=6]
 
 [node name="01-HelloWorld" type="Node2D"]
 script = ExtResource( 2 )
 coding_resources_object = ExtResource( 4 )
+interactive_session_theme = ExtResource( 5 )
+output_panel_theme = ExtResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
