@@ -51,5 +51,5 @@ rotation = 1.5708
 position = Vector2( 5888, 160 )
 rotation = -1.5708
 
-[node name="PlayerSpawn" parent="." index="10"]
+[node name="PlayerSpawn" parent="." index="11"]
 position = Vector2( 128, 384 )

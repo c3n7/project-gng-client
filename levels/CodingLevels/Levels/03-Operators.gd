@@ -6,7 +6,7 @@ export (Theme) var output_panel_theme
 
 onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
-onready var game_level = $BlueCoding01
+onready var game_level = $RedCoding01
 var coding_resources
 var httpReqCode
 
@@ -38,14 +38,17 @@ func _on_req_complete(build_status, result):
 
 
 func _get_code_to_test():
-	var pre = """def printer():
-	"""
+	var pre = "def printer():"
+	var body = ""
+	for i in range(coding_ground.get_line_count()):
+		body += "    " + coding_ground.get_line(i) + "\n"
 	var post = ""
-	return pre + coding_ground.text + "\n" + post
+	return pre + "\n" + body + "\n" + post
 	
 
 func _success(build_status):
 	if build_status == "success":
-		var player = $BlueCoding01/Player.get_child(0)
+		var player = game_level.get_node("Player").get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		game_level.spawn_balloon('blue', spawn_point, 'Hello World!')
+		var output = "operators 1997 " + str(OS.get_date()["year"] - 1997)
+		game_level.spawn_balloon('red', spawn_point, output)

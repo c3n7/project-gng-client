@@ -1,4 +1,11 @@
-var code = "print(string)"
+var year = OS.get_date()["year"]
+var age = year - 1997
+var code = """
+name = 'operators'
+yob = 1997
+age = """ + str(year) + """ - 1997
+print(name, yob, age)
+"""
 
 var tests = """
 import io
@@ -13,10 +20,8 @@ class TestCalculate(unittest.TestCase):
 		sys.stdout = capturedOutput                     # and redirect stdout.
 		printer()                                 # Call function.
 		sys.stdout = sys.__stdout__                     # Reset redirect.
-		self.assertEqual("hello world!", capturedOutput.getvalue().strip().lower())
-		
-	def tearDown(self):
-		printer()
+		expected = 'operators 1997 """ + str(age) + """'
+		self.assertEqual(expected, capturedOutput.getvalue().strip().lower())
 
 
 if __name__ == '__main__':

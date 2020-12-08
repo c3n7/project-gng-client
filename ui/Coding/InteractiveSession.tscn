@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://themes/green_theme.tres" type="Theme" id=1]
+[ext_resource path="res://themes/red_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://ui/Coding/InteractiveSession.gd" type="Script" id=3]
 [ext_resource path="res://ui/Coding/Alert.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/whoosh.wav" type="AudioStream" id=5]
-[ext_resource path="res://themes/output_green.tres" type="Theme" id=6]
+[ext_resource path="res://themes/output_red.tres" type="Theme" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
@@ -94,7 +94,7 @@ __meta__ = {
 [node name="Build" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
+margin_top = 21.0
 
 [node name="OutputMargin" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
 anchor_right = 1.0
@@ -109,7 +109,7 @@ __meta__ = {
 
 [node name="Output" type="TextEdit" parent="Full/Right/Bottom/TabContainer/Build/OutputMargin"]
 margin_right = 671.0
-margin_bottom = 352.0
+margin_bottom = 351.0
 theme = ExtResource( 6 )
 readonly = true
 show_line_numbers = true
