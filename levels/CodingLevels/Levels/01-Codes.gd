@@ -14,6 +14,9 @@ class TestCalculate(unittest.TestCase):
 		printer()                                 # Call function.
 		sys.stdout = sys.__stdout__                     # Reset redirect.
 		self.assertEqual("hello world!", capturedOutput.getvalue().strip().lower())
+		
+	def tearDown(self):
+		print('Take heed, son, you word is not code')
 
 
 if __name__ == '__main__':
