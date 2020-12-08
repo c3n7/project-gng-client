@@ -1,10 +1,15 @@
 var year = OS.get_date()["year"]
 var age = year - 1997
 var code = """
-name = 'operators'
-yob = 1997
-age = """ + str(year) + """ - 1997
-print(name, yob, age)
+a = 1736 * 389
+b = 2370 - 439
+c = 8 / 2
+d = c + b
+e = 4 == c
+f = d == e
+g = a != b
+h = c > d
+print(a, b, c, d, e, f, g, h)
 """
 
 var tests = """
@@ -20,7 +25,7 @@ class TestCalculate(unittest.TestCase):
 		sys.stdout = capturedOutput                     # and redirect stdout.
 		printer()                                 # Call function.
 		sys.stdout = sys.__stdout__                     # Reset redirect.
-		expected = 'operators 1997 """ + str(age) + """'
+		expected = '675304 1931 4.0 1935.0 true false true false'
 		self.assertEqual(expected, capturedOutput.getvalue().strip().lower())
 
 
