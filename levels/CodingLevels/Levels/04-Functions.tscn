@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ui/Coding/InteractiveSession.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Yellow/levels/YellowCoding01.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/CodingLevels/Levels/04-Functions.gd" type="Script" id=3]
+[ext_resource path="res://themes/green_theme.tres" type="Theme" id=4]
+[ext_resource path="res://levels/CodingLevels/Levels/04-Codes.gd" type="Script" id=5]
+[ext_resource path="res://themes/output_green.tres" type="Theme" id=6]
+
+[node name="04-Functions" type="Node2D"]
+script = ExtResource( 3 )
+coding_resources_object = ExtResource( 5 )
+interactive_session_theme = ExtResource( 4 )
+output_panel_theme = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InteractiveSession" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="YellowCoding01" parent="." instance=ExtResource( 2 )]
+[connection signal="build" from="CanvasLayer/InteractiveSession" to="." method="_on_InteractiveSession_build"]
