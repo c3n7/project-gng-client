@@ -38,10 +38,10 @@ func _on_req_complete(build_status, result):
 
 
 func _get_code_to_test():
-	var pre = "def printer():"
+	var pre = ""
 	var body = ""
 	for i in range(coding_ground.get_line_count()):
-		body += "    " + coding_ground.get_line(i) + "\n"
+		body += coding_ground.get_line(i) + "\n"
 	var post = ""
 	return pre + "\n" + body + "\n" + post
 	
@@ -50,5 +50,5 @@ func _success(build_status):
 	if build_status == "success":
 		var player = game_level.get_node("Player").get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		var output = "functions 1997 " + str(OS.get_date()["year"] - 1997)
+		var output = "You are Awesome! Functions working!"
 		game_level.spawn_balloon('yellow', spawn_point, output)
