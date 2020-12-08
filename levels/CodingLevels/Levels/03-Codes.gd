@@ -27,6 +27,9 @@ class TestCalculate(unittest.TestCase):
 		sys.stdout = sys.__stdout__                     # Reset redirect.
 		expected = '675304 1931 4.0 1935.0 true false true false'
 		self.assertEqual(expected, capturedOutput.getvalue().strip().lower())
+	
+	def tearDown(self):
+		printer()
 
 
 if __name__ == '__main__':

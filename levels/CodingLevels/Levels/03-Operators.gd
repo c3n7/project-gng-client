@@ -50,5 +50,5 @@ func _success(build_status):
 	if build_status == "success":
 		var player = game_level.get_node("Player").get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		var output = "operators 1997 " + str(OS.get_date()["year"] - 1997)
+		var output = "675304 1931 4.0 1935.0 true false true false"
 		game_level.spawn_balloon('red', spawn_point, output)
