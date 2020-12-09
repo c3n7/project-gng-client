@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://themes/red_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://ui/Coding/Alert.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sounds/whoosh.wav" type="AudioStream" id=5]
 [ext_resource path="res://themes/output_red.tres" type="Theme" id=6]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatLight23.png" type="Texture" id=7]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight24.png" type="Texture" id=8]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight25.png" type="Texture" id=9]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatLight22.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
@@ -201,7 +205,6 @@ custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
 text = "output"
 
 [node name="Slides" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 21.0
@@ -220,9 +223,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VBoxContainer" type="VBoxContainer" parent="Full/Right/Bottom/TabContainer/Slides/SlidesMargin"]
+margin_right = 671.0
+margin_bottom = 351.0
+
 [node name="Slide" type="RichTextLabel" parent="Full/Right/Bottom/TabContainer/Slides/SlidesMargin"]
 margin_right = 671.0
 margin_bottom = 351.0
+size_flags_vertical = 3
 custom_styles/normal = SubResource( 13 )
 custom_fonts/mono_font = SubResource( 4 )
 custom_fonts/bold_italics_font = SubResource( 6 )
@@ -235,6 +243,37 @@ text = "Hello World! Let's learn code"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NavButtons" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Slides"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -104.0
+margin_top = -56.0
+margin_right = 60.0
+margin_bottom = 24.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons"]
+margin_right = 164.0
+margin_bottom = 80.0
+
+[node name="TextureButton" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
+margin_right = 80.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 10 )
+
+[node name="TextureButton2" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
+margin_left = 84.0
+margin_right = 164.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 7 )
 
 [node name="Expectations" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
 visible = false
