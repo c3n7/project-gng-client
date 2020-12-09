@@ -6,6 +6,7 @@ export (Theme) var output_panel_theme
 
 onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
+onready var slides = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/SlidesMargin/Slide
 onready var game_level = $YellowCoding01
 var coding_resources
 var httpReqCode
@@ -17,6 +18,7 @@ func _ready():
 		print_debug("Error while connecting to req_completed signal")
 	coding_resources = coding_resources_object.new()
 	coding_ground.text = coding_resources.code
+	slides.bbcode_text  = coding_resources.slides[0]
 	$CanvasLayer/InteractiveSession.set_theme(interactive_session_theme)
 	debug_output.set_theme(output_panel_theme)
 	$CanvasLayer/InteractiveSession/Alert.set_theme(output_panel_theme)
