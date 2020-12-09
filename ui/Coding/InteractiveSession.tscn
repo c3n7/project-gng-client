@@ -262,13 +262,13 @@ __meta__ = {
 margin_right = 164.0
 margin_bottom = 80.0
 
-[node name="TextureButton" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
+[node name="Back" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
 margin_right = 80.0
 margin_bottom = 80.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 10 )
 
-[node name="TextureButton2" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
+[node name="Forward" type="TextureButton" parent="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer"]
 margin_left = 84.0
 margin_right = 164.0
 margin_bottom = 80.0
@@ -288,3 +288,5 @@ margin_top = 21.0
 [node name="Whoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]
+[connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Forward" to="." method="_on_Forward_pressed"]

@@ -1,6 +1,8 @@
 extends Control
 
 signal build
+signal next_slide
+signal prev_slide
 
 onready var coding_ground = $Full/Right/Top/CodingGround
 
@@ -58,3 +60,11 @@ func show_alert(image):
 	$Alert/HBoxContainer/Label.text = labelText
 	$Alert/AnimationPlayer.play("slide_in_out")
 	$Whoosh.play()
+
+
+func _on_Back_pressed():
+	emit_signal("prev_slide")
+
+
+func _on_Forward_pressed():
+	emit_signal("next_slide")
