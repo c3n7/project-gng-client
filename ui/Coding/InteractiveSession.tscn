@@ -227,6 +227,34 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 21.0
 
+[node name="ExerciseMargin" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Exercise"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exercise" type="RichTextLabel" parent="Full/Right/Bottom/TabContainer/Exercise/ExerciseMargin"]
+margin_right = 671.0
+margin_bottom = 351.0
+size_flags_vertical = 3
+custom_styles/normal = SubResource( 13 )
+custom_fonts/mono_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 6 )
+custom_fonts/italics_font = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "Hello [b]World![/b] [b][i]Let's[/i][/b] [i]learn[/i] [code]code[/code]"
+text = "Hello World! Let's learn code"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Build" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
 visible = false
 anchor_right = 1.0

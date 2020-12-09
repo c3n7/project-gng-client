@@ -129,3 +129,12 @@ print(result)[/code]
 Without using the [code]return[/code] statement here, the program cannot return a value so the value defaults to [code]None[/code].
 """
 ]
+
+var exercise = """
+[b]Addition and Multiplication Functions[/b]
+Create two functions, namely [code]add[/code] and [code]multiply[/code]. 
+
+- Both should  accept two parameters.
+- The [code]add[/code] function should return the sum of the two numbers passed.
+- The [code]multiply[/code] function should return the result of multiplying the two numbers passed
+"""

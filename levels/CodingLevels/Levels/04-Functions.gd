@@ -8,6 +8,7 @@ onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/Codin
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
 onready var slides = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/SlidesMargin/Slide
 onready var slideCountLabel =$CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/Count/CountLabel
+onready var exercises = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Exercise/ExerciseMargin/Exercise
 onready var game_level = $YellowCoding01
 var coding_resources
 
@@ -23,6 +24,7 @@ func _ready():
 	# Fill text objects
 	coding_resources = coding_resources_object.new()
 	coding_ground.text = coding_resources.code
+	exercises.bbcode_text = coding_resources.exercise
 	
 	slides.bbcode_text  = coding_resources.slides[currentSlide]
 	slidesCount = coding_resources.slides.size()
