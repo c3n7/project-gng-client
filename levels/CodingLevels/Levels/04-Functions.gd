@@ -10,6 +10,7 @@ onready var slides = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContai
 onready var slideCountLabel =$CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/Count/CountLabel
 onready var exercises = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Exercise/ExerciseMargin/Exercise
 onready var game_level = $YellowCoding01
+
 var coding_resources
 
 var currentSlide = 0
