@@ -137,73 +137,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Build" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 21.0
-
-[node name="OutputMargin" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = 5.0
-margin_right = -5.0
-margin_bottom = -5.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Output" type="TextEdit" parent="Full/Right/Bottom/TabContainer/Build/OutputMargin"]
-margin_right = 671.0
-margin_bottom = 351.0
-theme = ExtResource( 6 )
-readonly = true
-show_line_numbers = true
-wrap_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -9.0
-margin_top = -60.0
-margin_right = -9.0
-margin_bottom = -12.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/Bottom/TabContainer/Build/MarginContainer"]
-margin_right = 681.0
-margin_bottom = 48.0
-
-[node name="Build" type="Button" parent="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer"]
-margin_left = 572.0
-margin_right = 681.0
-margin_bottom = 48.0
-size_flags_horizontal = 10
-text = "Build"
-
-[node name="Label" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = -40.0
-margin_right = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Full/Right/Bottom/TabContainer/Build/Label"]
-margin_top = 11.0
-margin_right = 62.0
-margin_bottom = 29.0
-custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
-text = "output"
-
 [node name="Slides" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -275,11 +208,79 @@ margin_bottom = 80.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 7 )
 
-[node name="Expectations" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
+[node name="Exercise" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 21.0
+
+[node name="Build" type="Tabs" parent="Full/Right/Bottom/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+
+[node name="OutputMargin" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Output" type="TextEdit" parent="Full/Right/Bottom/TabContainer/Build/OutputMargin"]
+margin_right = 671.0
+margin_bottom = 351.0
+theme = ExtResource( 6 )
+readonly = true
+show_line_numbers = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -9.0
+margin_top = -60.0
+margin_right = -9.0
+margin_bottom = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Full/Right/Bottom/TabContainer/Build/MarginContainer"]
+margin_right = 681.0
+margin_bottom = 48.0
+
+[node name="Build" type="Button" parent="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer"]
+margin_left = 572.0
+margin_right = 681.0
+margin_bottom = 48.0
+size_flags_horizontal = 10
+text = "Build"
+
+[node name="Label" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Build"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Full/Right/Bottom/TabContainer/Build/Label"]
+margin_top = 11.0
+margin_right = 62.0
+margin_bottom = 29.0
+custom_colors/font_color = Color( 0.733333, 0.733333, 0.733333, 1 )
+text = "output"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
@@ -287,6 +288,6 @@ margin_top = 21.0
 
 [node name="Whoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-[connection signal="pressed" from="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Forward" to="." method="_on_Forward_pressed"]
+[connection signal="pressed" from="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]
