@@ -7,10 +7,12 @@ export (Theme) var output_panel_theme
 onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
 onready var slides = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/SlidesMargin/Slide
+onready var slideCountLabel =$CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/Count/CountLabel
 onready var game_level = $YellowCoding01
 var coding_resources
 
 var currentSlide = 0
+var slidesCount
 
 func _ready():
 	init($HTTPRequest)
@@ -21,7 +23,10 @@ func _ready():
 	# Fill text objects
 	coding_resources = coding_resources_object.new()
 	coding_ground.text = coding_resources.code
+	
 	slides.bbcode_text  = coding_resources.slides[currentSlide]
+	slidesCount = coding_resources.slides.size()
+	slideCountLabel.text = str(currentSlide + 1) + " of " + str(slidesCount)
 	
 	# Themes
 	$CanvasLayer/InteractiveSession.set_theme(interactive_session_theme)
@@ -29,19 +34,27 @@ func _ready():
 	$CanvasLayer/InteractiveSession/Alert.set_theme(output_panel_theme)
 	
 	# For the slides
-	$CanvasLayer/InteractiveSession.connect("next_slide", self, "_on_next_slide")
-	$CanvasLayer/InteractiveSession.connect("prev_slide", self, "_on_prev_slide")
+	error = $CanvasLayer/InteractiveSession.connect("next_slide", self, "_on_next_slide")
+	if error != OK:
+		print_debug("Error while connecting to next_slide signal")
+	error = $CanvasLayer/InteractiveSession.connect("prev_slide", self, "_on_prev_slide")
+	if error != OK:
+		print_debug("Error while connecting to next_slide signal")
 
 func _on_next_slide():
 	currentSlide += 1
-	if currentSlide >= coding_resources.slides.size():
-		currentSlide = coding_resources.slides.size() - 1
+	if currentSlide >= slidesCount:
+		currentSlide = slidesCount - 1
+	
+	slideCountLabel.text = str(currentSlide + 1) + " of " + str(slidesCount)
 	slides.bbcode_text = coding_resources.slides[currentSlide]
 
 func _on_prev_slide():
 	currentSlide -= 1
 	if currentSlide <= 0:
 		currentSlide = 0
+	
+	slideCountLabel.text = str(currentSlide + 1) + " of " + str(slidesCount)
 	slides.bbcode_text = coding_resources.slides[currentSlide]
 
 func _on_InteractiveSession_build():

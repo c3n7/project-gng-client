@@ -127,9 +127,5 @@ result = square(3)
 print(result)[/code]
 
 Without using the [code]return[/code] statement here, the program cannot return a value so the value defaults to [code]None[/code].
-""",
-"""
-[b]End[/b]
-Now attempt the given exercise
 """
 ]
