@@ -6,10 +6,9 @@ export (Theme) var output_panel_theme
 
 onready var coding_ground = $CanvasLayer/InteractiveSession/Full/Right/Top/CodingGround
 onready var debug_output = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Build/OutputMargin/Output
+onready var slides = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Slides/SlidesMargin/Slide
 var coding_resources
 onready var game_level = $GreenCoding01
-
-var httpReqCode
 
 func _ready():
 	init($HTTPRequest)
@@ -18,6 +17,7 @@ func _ready():
 		print_debug("Error while connecting to req_completed signal")
 	coding_resources = coding_resources_object.new()
 	coding_ground.text = coding_resources.code
+	slides.bbcode_text = coding_resources.slides[0]
 	$CanvasLayer/InteractiveSession.set_theme(interactive_session_theme)
 	debug_output.set_theme(output_panel_theme)
 	$CanvasLayer/InteractiveSession/Alert.set_theme(output_panel_theme)
@@ -37,6 +37,7 @@ func _on_req_complete(build_status, result):
 	$CanvasLayer/InteractiveSession.show_alert(build_status)
 	_success(build_status)
 
+
 func _get_code_to_test():
 	var pre = "def printer():"
 	var body = ""
@@ -44,7 +45,8 @@ func _get_code_to_test():
 		body += "    " + coding_ground.get_line(i) + "\n"
 	var post = ""
 	return pre + "\n" + body + "\n" + post
-	
+
+
 func _success(build_status):
 	if build_status == "success":
 		var player = game_level.get_node("Player").get_child(0)
