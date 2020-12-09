@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://themes/red_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,41 @@ bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
 [sub_resource type="DynamicFont" id=2]
 size = 12
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/Fonts/roboto/Roboto-BoldItalic.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/Fonts/roboto/Roboto-Italic.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 12
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/Fonts/roboto/Roboto-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 12
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/Fonts/roboto/Roboto-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 12
+font_data = SubResource( 11 )
 
 [node name="InteractiveSession" type="Control"]
 anchor_right = 1.0
@@ -162,7 +197,33 @@ text = "output"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
+margin_top = 21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SlidesMargin" type="MarginContainer" parent="Full/Right/Bottom/TabContainer/Slides"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slide" type="RichTextLabel" parent="Full/Right/Bottom/TabContainer/Slides/SlidesMargin"]
+margin_right = 671.0
+margin_bottom = 351.0
+custom_fonts/mono_font = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 6 )
+custom_fonts/italics_font = SubResource( 8 )
+custom_fonts/bold_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 12 )
+bbcode_enabled = true
+bbcode_text = "Hello [b]World![/b] [b][i]Let's[/i][/b] [i]learn[/i] [code]code[/code]"
+text = "Hello World! Let's learn code"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -171,7 +232,7 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
+margin_top = 21.0
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 

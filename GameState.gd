@@ -11,9 +11,9 @@ var level1 = 'res://levels/Green/levels/GreenLevel01.tscn'
 
 var levels = [
 	'res://levels/CodingLevels/Levels/02-Variables.tscn',
-	'res://levels/Red/levels/RedLevel01.tscn',
+	'res://levels/CodingLevels/Levels/03-Operators.tscn',
 	'res://levels/CodingLevels/Levels/01-HelloWorld.tscn',
-	'res://levels/Yellow/levels/YellowLevel01.tscn'
+	'res://levels/CodingLevels/Levels/04-Functions.tscn'
 ]
 
 func restart():
