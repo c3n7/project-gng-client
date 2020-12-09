@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://themes/red_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
@@ -14,39 +14,46 @@ bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
 size = 12
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0, 0, 0, 0.219608 )
+
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf"
 
 [sub_resource type="DynamicFont" id=4]
-size = 12
+size = 14
 font_data = SubResource( 3 )
 
 [sub_resource type="DynamicFontData" id=5]
 font_path = "res://assets/Fonts/roboto/Roboto-BoldItalic.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-size = 12
+size = 14
 font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/Fonts/roboto/Roboto-Italic.ttf"
 
 [sub_resource type="DynamicFont" id=8]
-size = 12
+size = 14
 font_data = SubResource( 7 )
 
 [sub_resource type="DynamicFontData" id=9]
 font_path = "res://assets/Fonts/roboto/Roboto-Bold.ttf"
 
 [sub_resource type="DynamicFont" id=10]
-size = 12
+size = 14
 font_data = SubResource( 9 )
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://assets/Fonts/roboto/Roboto-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=12]
-size = 12
+size = 14
 font_data = SubResource( 11 )
 
 [node name="InteractiveSession" type="Control"]
@@ -216,6 +223,7 @@ __meta__ = {
 [node name="Slide" type="RichTextLabel" parent="Full/Right/Bottom/TabContainer/Slides/SlidesMargin"]
 margin_right = 671.0
 margin_bottom = 351.0
+custom_styles/normal = SubResource( 13 )
 custom_fonts/mono_font = SubResource( 4 )
 custom_fonts/bold_italics_font = SubResource( 6 )
 custom_fonts/italics_font = SubResource( 8 )
