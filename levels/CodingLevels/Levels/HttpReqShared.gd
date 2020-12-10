@@ -4,6 +4,11 @@ signal req_complete(build_status, result)
 
 var safe_to_make_http_request = true
 
+var coding_resources # Contains the slides, code, tests and exercise
+
+var currentSlide = 0
+var slidesCount
+
 func init(httpreq):
 	var error = httpreq.connect("request_completed", self, "_on_request_completed")
 	if error != OK:
@@ -55,3 +60,22 @@ func _test_code(code, test, alert_label, interactive_session):
 
 func _on_game_won():
 	GameState.open_levels_screen()
+
+func _on_next_slide():
+	pass
+
+func _on_prev_slide():
+	pass
+
+func _process(delta):
+	var slide_next = Input.is_action_just_pressed("slide_next")
+	var slide_prev = Input.is_action_just_pressed("slide_prev")
+	var exit_game = Input.is_action_just_pressed("exit_game")
+	
+	if slide_next:
+		_on_next_slide()
+	elif slide_prev:
+		_on_prev_slide()
+	
+	if exit_game:
+		GameState.open_title_screen()

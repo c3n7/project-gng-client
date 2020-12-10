@@ -11,10 +11,6 @@ onready var slideCountLabel =$CanvasLayer/InteractiveSession/Full/Right/Bottom/T
 onready var exercises = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Exercise/ExerciseMargin/Exercise
 onready var game_level = $YellowCoding01
 
-var coding_resources
-
-var currentSlide = 0
-var slidesCount
 
 func _ready():
 	init($HTTPRequest)
