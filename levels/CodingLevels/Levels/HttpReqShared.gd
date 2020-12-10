@@ -51,3 +51,7 @@ func _test_code(code, test, alert_label, interactive_session):
 	interactive_session.show_alert("building")
 	_make_post_request("http://127.0.0.1:5000/code/",
 		{"code":code, "test":test}, false)
+
+
+func _on_game_won():
+	GameState.open_levels_screen()

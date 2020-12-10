@@ -43,6 +43,8 @@ func _ready():
 	error = $CanvasLayer/InteractiveSession.connect("prev_slide", self, "_on_prev_slide")
 	if error != OK:
 		print_debug("Error while connecting to next_slide signal")
+	
+	game_level.connect("game_won", self, "_on_game_won")
 
 func _on_next_slide():
 	currentSlide += 1
@@ -86,4 +88,4 @@ func _success(build_status):
 	if build_status == "success":
 		var player = $BlueCoding01/Player.get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		game_level.spawn_balloon('blue', spawn_point, 'Hello World!')
+		game_level.spawn_balloon('blue', spawn_point, 'Hello World!', true)

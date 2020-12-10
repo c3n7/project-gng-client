@@ -1,6 +1,7 @@
 extends Node2D
 
 signal score_changed
+signal game_won
 
 export (PackedScene) var player
 export (PackedScene) var Collectible
@@ -66,11 +67,12 @@ func spawn_pickups():
 			call_deferred("add_child", c)
 			c.connect('pickup', self, '_on_Collectible_pickup')
 
-func spawn_balloon(type, pos, text):
+func spawn_balloon(type, pos, text, final_balloon = false):
 	var b = Balloon.instance()
-	b.init(type, pos, text)
+	b.init(type, pos, text, final_balloon)
 	$Balloons.call_deferred("add_child", b)
 	b.connect('pickup', self, '_on_Balloon_pickup')
+	b.connect('final_balloon_picked', self, '_on_final_balloon_picked')
 #	print(str(10 *rand_range(0, 1)))
 
 func spawn_water():
@@ -108,6 +110,12 @@ func _on_Balloon_pickup():
 	score += 10
 	$CollectibleSound.play()
 	emit_signal('score_changed', score)
+
+func _on_final_balloon_picked():
+	yield($CollectibleSound, "finished")
+	$LevelUpSound.play()
+	yield($LevelUpSound, "finished")
+	emit_signal("game_won")
 
 func _on_InWater():
 	for p in $Player.get_children():
