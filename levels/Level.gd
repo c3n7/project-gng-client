@@ -13,6 +13,7 @@ onready var pickups = $Collectibles
 onready var water = $Water
 
 var score
+var score_increment = 1
 
 var collectibles = [
 	'blueGem', 'blueJewel', 'blueCrystal',
@@ -102,7 +103,7 @@ func _on_Player_dead():
 	pass
 
 func _on_Collectible_pickup():
-	score += 1
+	score += score_increment
 	$CollectibleSound.play()
 	emit_signal('score_changed', score)
 

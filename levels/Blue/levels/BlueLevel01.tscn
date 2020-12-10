@@ -36,10 +36,10 @@ position = Vector2( 2368, 448 )
 [node name="WalkingEnemy" parent="Enemies" index="2" instance=ExtResource( 2 )]
 position = Vector2( 1632, 416 )
 
-[node name="PlayerSpawn" parent="." index="10"]
-position = Vector2( 96, 384 )
-
 [node name="Controls" parent="." index="11" instance=ExtResource( 5 )]
+
+[node name="PlayerSpawn" parent="." index="12"]
+position = Vector2( 96, 384 )
 [connection signal="goingleft" from="Controls" to="." method="_on_Controls_goingleft"]
 [connection signal="goingright" from="Controls" to="." method="_on_Controls_goingright"]
 [connection signal="goup" from="Controls" to="." method="_on_Controls_goup"]

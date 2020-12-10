@@ -40,3 +40,6 @@ Create a function, call it `incrementByFive` such that:
 - Use the `+=` operator to add 5 to the passed value.
 - Return the result.
 
+Before building, collect coins in the game to observe that for each coin you pick, the score is incremented by 1.
+
+After building successfully, observe that for each coin you pick, the score is incremented by five for each coin you pick.

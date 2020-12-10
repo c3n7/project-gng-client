@@ -32,6 +32,5 @@ func _ready():
 
 func _on_Collectible_body_entered(body):
 	if body.is_in_group("player"):
-		print("hehe")
 		emit_signal('pickup')
 		queue_free()

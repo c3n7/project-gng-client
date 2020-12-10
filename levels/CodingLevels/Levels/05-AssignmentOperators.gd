@@ -10,8 +10,8 @@ func _get_nodes():
 	alert = $CanvasLayer/InteractiveSession/Alert
 	httpreq = $HTTPRequest
 	
-	pause_screen = $BlueCoding01/CanvasLayer/paused_dialog
-	game_level = $BlueCoding01
+	pause_screen = $BlueLevel01/CanvasLayer/paused_dialog
+	game_level = $BlueLevel01
 
 
 func _on_InteractiveSession_build():
@@ -22,8 +22,7 @@ func _on_InteractiveSession_build():
 
 
 func _get_code_to_test():
-	var pre = """def printer():
-	"""
+	var pre = ""
 	var post = ""
 	return pre + coding_ground.text + "\n" + post
 
@@ -32,4 +31,5 @@ func _success(build_status):
 	if build_status == "success":
 		var player = game_level.get_node("Player").get_child(0)
 		var spawn_point = Vector2(player.position.x, rand_range(-100, -300))
-		game_level.spawn_balloon('blue', spawn_point, 'Hello World!', true)
+		game_level.spawn_balloon('blue', spawn_point, 'Pick Coins', false)
+		game_level.score_increment = 5
