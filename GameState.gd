@@ -13,7 +13,8 @@ var levels = [
 	'res://levels/CodingLevels/Levels/01-HelloWorld.tscn',
 	'res://levels/CodingLevels/Levels/02-Variables.tscn',
 	'res://levels/CodingLevels/Levels/03-Operators.tscn',
-	'res://levels/CodingLevels/Levels/04-Functions.tscn'
+	'res://levels/CodingLevels/Levels/04-Functions.tscn',
+	'res://levels/CodingLevels/Levels/05-AssignmentOperators.tscn'
 ]
 
 func restart():
@@ -28,6 +29,7 @@ func next_level():
 
 func open_level(i):
 	if i > levels.size():
+		push_warning("Attempting to fetch unadded level")
 		return
 	var error = get_tree().change_scene(levels[i - 1])
 	if error != OK:

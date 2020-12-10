@@ -27,3 +27,9 @@ func _on_L4_Button_pressed():
 	$Click.play()
 	yield($Click, "finished")
 	GameState.open_level(4)
+
+
+func _on_L5_Button_pressed():
+	$Click.play()
+	yield($Click, "finished")
+	GameState.open_level(5)

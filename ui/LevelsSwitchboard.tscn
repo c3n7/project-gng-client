@@ -535,13 +535,13 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer"]
 margin_top = 4.0
-margin_right = 1748.0
+margin_right = 2186.0
 margin_bottom = 363.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer"]
-margin_right = 1748.0
+margin_right = 2186.0
 margin_bottom = 359.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -708,6 +708,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Level05" type="HBoxContainer" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer"]
+margin_left = 1752.0
+margin_right = 2186.0
+margin_bottom = 359.0
+size_flags_horizontal = 3
+
+[node name="divider" type="ColorRect" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level05"]
+margin_right = 30.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 30, 0 )
+color = Color( 0.0823529, 0.564706, 0.768627, 0 )
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level05"]
+margin_left = 34.0
+margin_right = 434.0
+margin_bottom = 359.0
+focus_mode = 0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level05/Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.5
+margin_top = -91.5
+margin_right = 140.5
+margin_bottom = 91.5
+custom_fonts/font = SubResource( 6 )
+text = "5
+Assignment
+Operators"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 30 )
 [connection signal="pressed" from="MarginContainer/Panel/CenterContainer/VBoxContainer/heading/BackButton" to="." method="_on_BackButton_pressed"]
@@ -715,3 +756,4 @@ stream = ExtResource( 30 )
 [connection signal="pressed" from="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level02/Button" to="." method="_on_L2_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level03/Button" to="." method="_on_L3_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level04/Button" to="." method="_on_L4_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/CenterContainer/VBoxContainer/CenterContainer/ScrollContainer/CenterContainer/HBoxContainer/Level05/Button" to="." method="_on_L5_Button_pressed"]
