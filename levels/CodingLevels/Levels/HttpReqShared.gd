@@ -67,7 +67,7 @@ func _on_next_slide():
 func _on_prev_slide():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	var slide_next = Input.is_action_just_pressed("slide_next")
 	var slide_prev = Input.is_action_just_pressed("slide_prev")
 	var exit_game = Input.is_action_just_pressed("exit_game")
