@@ -163,6 +163,6 @@ func _on_HUD_pause():
 	$CanvasLayer/paused_dialog.show()
 
 
-func _on_paused_dialog_confirmed():
+func _on_quit_modal_pressed():
 	$CanvasLayer/paused_dialog.hide()
 	get_tree().paused = false

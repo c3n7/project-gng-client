@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://ui/Controls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
@@ -11,6 +11,9 @@
 [ext_resource path="res://interactibles/Door.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/sounds/levelUp.ogg" type="AudioStream" id=10]
 [ext_resource path="res://collectibles/Balloon.tscn" type="PackedScene" id=11]
+[ext_resource path="res://themes/blue_theme.tres" type="Theme" id=12]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatLight45.png" type="Texture" id=13]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight47.png" type="Texture" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "red_plants"
@@ -834,18 +837,111 @@ format = 1
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
-[node name="paused_dialog" type="AcceptDialog" parent="CanvasLayer"]
+[node name="paused_dialog" type="PopupDialog" parent="CanvasLayer"]
 pause_mode = 2
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -52.0
-margin_top = -29.0
-margin_right = 52.0
-margin_bottom = 29.0
-window_title = "Paused"
-dialog_text = "Game Paused"
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/paused_dialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/paused_dialog/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 200.0
+
+[node name="Help" type="Tabs" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/MarginContainer"]
+modulate = Color( 0, 0, 0, 0.301961 )
+margin_right = 190.0
+margin_bottom = 170.0
+
+[node name="HelpText" type="MarginContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText"]
+margin_right = 184.0
+margin_bottom = 160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+margin_right = 184.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ctrl + N : Next slide"
+
+[node name="Label2" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+margin_top = 22.0
+margin_right = 184.0
+margin_bottom = 40.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ctrl + P : Prev slide"
+
+[node name="Label3" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+margin_top = 44.0
+margin_right = 184.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ctrl + Q : Quit game"
+
+[node name="quit_modal" type="TextureButton" parent="CanvasLayer/paused_dialog"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -19.0
+margin_top = 2.0
+margin_right = 61.0
+margin_bottom = 82.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CollectibleSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
@@ -860,4 +956,4 @@ stream = ExtResource( 10 )
 [connection signal="notgoingleft" from="Control/Controls" to="." method="_on_Controls_notgoingleft"]
 [connection signal="notgoingright" from="Control/Controls" to="." method="_on_Controls_notgoingright"]
 [connection signal="pause" from="CanvasLayer/HUD" to="." method="_on_HUD_pause"]
-[connection signal="confirmed" from="CanvasLayer/paused_dialog" to="." method="_on_paused_dialog_confirmed"]
+[connection signal="pressed" from="CanvasLayer/paused_dialog/quit_modal" to="." method="_on_quit_modal_pressed"]
