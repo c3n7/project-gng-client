@@ -50,3 +50,26 @@ func set_responsiveness(type):
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_2D, SceneTree.STRETCH_ASPECT_EXPAND, Vector2(960, 480))
 	elif type == Responsiveness.SHOW_MORE:
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_KEEP, Vector2(640, 480))
+
+
+var score_file = "user://highscore.txt"
+
+func add_score(score):
+	var current_score = get_score()
+	var f = File.new()
+	f.open(score_file, File.WRITE)
+	f.store_string(str(current_score + score))
+	f.close()
+
+func get_score():
+	var current_score
+	var f = File.new()
+	if f.file_exists(score_file):
+		f.open(score_file, File.READ)
+		var content = f.get_as_text()
+		current_score = int(content)
+		f.close()
+		return current_score
+	
+	else:
+		return 0

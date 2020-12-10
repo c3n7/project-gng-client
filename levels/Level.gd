@@ -167,3 +167,6 @@ func _on_HUD_pause():
 func _on_quit_modal_pressed():
 	$CanvasLayer/paused_dialog.hide()
 	get_tree().paused = false
+
+func _exit_tree():
+	GameState.add_score(score)

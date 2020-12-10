@@ -3,6 +3,8 @@ extends Control
 
 func _ready():
 	GameState.set_responsiveness(GameState.Responsiveness.EXPAND)
+	var score = GameState.get_score()
+	$Score/Label.text = "Score: " + str(score)
 
 
 func _on_Quit_pressed():
