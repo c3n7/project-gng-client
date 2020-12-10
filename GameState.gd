@@ -10,9 +10,9 @@ var levels_screen = 'res://ui/LevelsSwitchboard.tscn'
 var level1 = 'res://levels/Green/levels/GreenLevel01.tscn'
 
 var levels = [
+	'res://levels/CodingLevels/Levels/01-HelloWorld.tscn',
 	'res://levels/CodingLevels/Levels/02-Variables.tscn',
 	'res://levels/CodingLevels/Levels/03-Operators.tscn',
-	'res://levels/CodingLevels/Levels/01-HelloWorld.tscn',
 	'res://levels/CodingLevels/Levels/04-Functions.tscn'
 ]
 
