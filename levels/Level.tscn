@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://ui/Controls.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Level.gd" type="Script" id=2]
@@ -753,6 +753,21 @@ points = PoolVector2Array( 24, 96, 104, 96, 112, 128, 16, 128 )
 20/shapes = [  ]
 20/z_index = 0
 
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 0.172549 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0, 0, 0, 0.435294 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://assets/Fonts/Kenney Mini Square.ttf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 13
+font_data = SubResource( 16 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 Collectible = ExtResource( 8 )
@@ -855,27 +870,55 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="CanvasLayer/paused_dialog"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/paused_dialog/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/paused_dialog"]
 margin_right = 200.0
 margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Help" type="Tabs" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/paused_dialog/VBoxContainer"]
+margin_right = 200.0
+margin_bottom = 21.0
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 17 )
+text = " Pause"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/paused_dialog/VBoxContainer"]
+margin_top = 25.0
+margin_right = 200.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 0, 2 )
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog/VBoxContainer"]
+margin_top = 31.0
+margin_right = 200.0
+margin_bottom = 200.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 169.0
+
+[node name="Help" type="Tabs" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 20.0
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
@@ -886,12 +929,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/MarginContainer"]
+[node name="Panel" type="Panel" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help/MarginContainer"]
 modulate = Color( 0, 0, 0, 0.301961 )
 margin_right = 190.0
-margin_bottom = 170.0
+margin_bottom = 139.0
 
-[node name="HelpText" type="MarginContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help"]
+[node name="HelpText" type="MarginContainer" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -902,27 +945,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help/HelpText"]
 margin_right = 184.0
-margin_bottom = 160.0
+margin_bottom = 129.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
 margin_right = 184.0
 margin_bottom = 18.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Ctrl + N : Next slide"
 
-[node name="Label2" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
 margin_top = 22.0
 margin_right = 184.0
 margin_bottom = 40.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Ctrl + P : Prev slide"
 
-[node name="Label3" type="Label" parent="CanvasLayer/paused_dialog/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/paused_dialog/VBoxContainer/MarginContainer/TabContainer/Help/HelpText/VBoxContainer"]
 margin_top = 44.0
 margin_right = 184.0
 margin_bottom = 62.0
