@@ -7,7 +7,7 @@ extends Control
 var safe_to_make_http_request = true
 var request_made = ""
 
-onready var grid = $BodyMargin/TabContainer/Leaderboard/GridContainer
+onready var grid = $BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
