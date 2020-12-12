@@ -8,6 +8,8 @@ var safe_to_make_http_request = true
 var request_made = ""
 
 onready var grid = $BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer
+onready var contrast_label : Theme = preload("res://themes/contrast_label.tres")
+onready var light_label: Theme = preload("res://themes/light_label.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,21 +25,28 @@ func _ready():
 func _on_request_completed(_result, _response_code, _headers, body):
 	safe_to_make_http_request = true
 	var json = JSON.parse(body.get_string_from_utf8())
-	print(json)
 	print_debug(json.result)
 	if request_made == "all_scores":
 		request_made = ""
 		_populate_leaderboard(json.result)
 
 func _populate_leaderboard(scores):
+	var i = 0
 	for key in scores:
 		var u = Label.new()
 		u.text = key
 		var s = Label.new()
+		s.align = Label.ALIGN_RIGHT
 		s.text = str(scores[key])
+		if i % 2 != 0:
+			s.set_theme(contrast_label)
+			u.set_theme(contrast_label)
+		else:
+			s.set_theme(light_label)
+			u.set_theme(light_label)
+		i = i + 1
 		grid.add_child(u)
 		grid.add_child(s)
-		print(key + " " + str(scores[key]))
 
 func _make_post_request(url, data_to_send, use_ssl):
 	# Convert data to json string:
