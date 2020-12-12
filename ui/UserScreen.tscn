@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://themes/blue_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedBack.png" type="Texture" id=2]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatBack.png" type="Texture" id=3]
+[ext_resource path="res://ui/UserScreen.gd" type="Script" id=4]
+
+[node name="UserScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.4, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="TextureButton" parent="MarginContainer"]
+margin_right = 80.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_BackButton_pressed"]

@@ -8,7 +8,9 @@
 [ext_resource path="res://assets/PNG/Enemies/enemyFloating_1.png" type="Texture" id=6]
 [ext_resource path="res://assets/PNG/Players/Player Red/playerRed_swim1.png" type="Texture" id=7]
 [ext_resource path="res://assets/PNG/Other/fluidBlue_top.png" type="Texture" id=8]
+[ext_resource path="res://assets/HUD/controls/flatLight/flatPerson.png" type="Texture" id=9]
 [ext_resource path="res://assets/PNG/Other/fluidBlue.png" type="Texture" id=10]
+[ext_resource path="res://assets/HUD/controls/shadedLight/shadedPerson.png" type="Texture" id=11]
 [ext_resource path="res://assets/PNG/Players/Player Green/playerGreen_switch2.png" type="Texture" id=12]
 [ext_resource path="res://assets/PNG/Players/Player Red/playerRed_roll.png" type="Texture" id=13]
 [ext_resource path="res://assets/PNG/Items/puzzleRed.png" type="Texture" id=14]
@@ -20,13 +22,6 @@
 size = 50
 outline_size = 3
 font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFontData" id=2]
-font_path = "res://assets/Fonts/Kenney Blocks.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-size = 19
-font_data = SubResource( 2 )
 
 [node name="HomeScreen" type="Control"]
 anchor_right = 1.0
@@ -504,21 +499,23 @@ centered = false
 region_enabled = true
 region_rect = Rect2( 2176, 128, 256, 512 )
 
-[node name="Score" type="MarginContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchor_left = 1.0
 anchor_right = 1.0
+margin_left = -40.0
 margin_top = 10.0
-margin_right = -10.0
-margin_bottom = 29.0
+margin_bottom = 80.0
+rect_scale = Vector2( 0.4, 0.4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Score"]
-margin_right = 1356.0
-margin_bottom = 29.0
-custom_fonts/font = SubResource( 3 )
-text = "Score: 0"
-align = 2
+[node name="UserButton" type="TextureButton" parent="MarginContainer2"]
+margin_right = 80.0
+margin_bottom = 80.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 9 )
 [connection signal="pressed" from="Buttons/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="Buttons/Levels" to="." method="_on_Levels_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MarginContainer2/UserButton" to="." method="_on_UserButton_pressed"]

@@ -7,7 +7,7 @@ var current_level = 1
 
 var title_screen = 'res://ui/HomeScreen.tscn'
 var levels_screen = 'res://ui/LevelsSwitchboard.tscn'
-var level1 = 'res://levels/Green/levels/GreenLevel01.tscn'
+var user_screen = 'res://ui/UserScreen.tscn'
 
 var levels = [
 	'res://levels/CodingLevels/Levels/01-HelloWorld.tscn',
@@ -16,6 +16,8 @@ var levels = [
 	'res://levels/CodingLevels/Levels/04-Functions.tscn',
 	'res://levels/CodingLevels/Levels/05-AssignmentOperators.tscn'
 ]
+
+var level1 = levels[0]
 
 func restart():
 	var error = get_tree().change_scene(title_screen)
@@ -42,6 +44,11 @@ func open_levels_screen():
 
 func open_title_screen():
 	var error = get_tree().change_scene(title_screen)
+	if error != OK:
+		push_error("Error while changing scene")
+
+func open_user_screen():
+	var error = get_tree().change_scene(user_screen)
 	if error != OK:
 		push_error("Error while changing scene")
 
