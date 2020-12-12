@@ -59,13 +59,14 @@ func set_responsiveness(type):
 		get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_DISABLED, SceneTree.STRETCH_ASPECT_KEEP, Vector2(640, 480))
 
 
-var score_file = "user://highscore.txt"
+var score_file = "user://project-gng-data.json"
 
 func add_score(score):
-	var current_score = get_score()
+	var current_score = 0
+	var new_score = current_score + score
 	var f = File.new()
 	f.open(score_file, File.WRITE)
-	f.store_string(str(current_score + score))
+	f.store_string('{"score": ' + str(new_score) + "}")
 	f.close()
 
 func get_score():
@@ -73,8 +74,9 @@ func get_score():
 	var f = File.new()
 	if f.file_exists(score_file):
 		f.open(score_file, File.READ)
-		var content = f.get_as_text()
-		current_score = int(content)
+		var content = JSON.parse(f.get_as_text()).result
+		print_debug(content)
+		current_score = int(content["score"])
 		f.close()
 		return current_score
 	
