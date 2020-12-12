@@ -55,4 +55,36 @@ margin_bottom = 24.0
 custom_fonts/font = SubResource( 2 )
 text = "SCORE: 0"
 align = 2
+
+[node name="BodyMargin" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="BodyMargin"]
+margin_right = 1346.0
+margin_bottom = 708.0
+
+[node name="Leaderboard" type="Tabs" parent="BodyMargin/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="BodyMargin/TabContainer/Leaderboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_BackButton_pressed"]

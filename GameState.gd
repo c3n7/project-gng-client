@@ -75,7 +75,6 @@ func get_score():
 	if f.file_exists(score_file):
 		f.open(score_file, File.READ)
 		var content = JSON.parse(f.get_as_text()).result
-		print_debug(content)
 		current_score = int(content["score"])
 		f.close()
 		return current_score
