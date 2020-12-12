@@ -96,27 +96,37 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer"]
-margin_left = 617.0
-margin_right = 729.0
+margin_left = 591.0
+margin_right = 755.0
 margin_bottom = 678.0
 size_flags_horizontal = 4
-columns = 2
+columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UserTitle" type="Label" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer"]
+[node name="RankTitle" type="Label" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer"]
 margin_right = 48.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 4 )
+text = "Rank"
+align = 1
+
+[node name="UserTitle" type="Label" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 4 )
 text = "USER"
+align = 1
 
 [node name="ScoreTitle" type="Label" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer"]
-margin_left = 52.0
-margin_right = 112.0
+margin_left = 104.0
+margin_right = 164.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 4 )
 text = "SCORE"
+align = 1
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_BackButton_pressed"]

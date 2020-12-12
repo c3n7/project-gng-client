@@ -38,13 +38,19 @@ func _populate_leaderboard(scores):
 		var s = Label.new()
 		s.align = Label.ALIGN_RIGHT
 		s.text = str(scores[key])
+		var j = Label.new()
+		j.text = str(i + 1)
+		j.align = Label.ALIGN_CENTER
 		if i % 2 != 0:
+			j.set_theme(contrast_label)
 			s.set_theme(contrast_label)
 			u.set_theme(contrast_label)
 		else:
+			j.set_theme(light_label)
 			s.set_theme(light_label)
 			u.set_theme(light_label)
 		i = i + 1
+		grid.add_child(j)
 		grid.add_child(u)
 		grid.add_child(s)
 
