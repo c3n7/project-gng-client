@@ -90,6 +90,7 @@ size_flags_vertical = 3
 [node name="MarginContainer" type="MarginContainer" parent="BodyMargin/TabContainer/Leaderboard"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -97,7 +98,7 @@ __meta__ = {
 [node name="GridContainer" type="GridContainer" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer"]
 margin_left = 617.0
 margin_right = 729.0
-margin_bottom = 688.0
+margin_bottom = 678.0
 size_flags_horizontal = 4
 columns = 2
 __meta__ = {
