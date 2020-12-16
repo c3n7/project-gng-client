@@ -11,7 +11,7 @@ font_path = "res://assets/Fonts/Kenney Blocks.ttf"
 [sub_resource type="DynamicFont" id=2]
 font_data = SubResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 5.0
 content_margin_right = 5.0
 content_margin_top = 2.0
@@ -23,14 +23,14 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0, 0, 0, 0.415686 )
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Kenney Future Narrow.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 17
 outline_size = 2
 outline_color = Color( 0, 0, 0, 0.294118 )
-font_data = SubResource( 3 )
+font_data = SubResource( 4 )
 
 [node name="UserScreen" type="Control"]
 anchor_right = 1.0
@@ -120,8 +120,8 @@ __meta__ = {
 [node name="RankTitle" type="Label" parent="BodyMargin/TabContainer/Leaderboard/MarginContainer/GridContainer"]
 margin_right = 58.0
 margin_bottom = 24.0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Rank"
 align = 1
 
@@ -129,8 +129,8 @@ align = 1
 margin_left = 62.0
 margin_right = 120.0
 margin_bottom = 24.0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "USER"
 align = 1
 
@@ -138,10 +138,49 @@ align = 1
 margin_left = 124.0
 margin_right = 194.0
 margin_bottom = 24.0
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "SCORE"
 align = 1
 
+[node name="My Profile" type="Tabs" parent="BodyMargin/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BodyMargin/TabContainer/My Profile"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BodyMargin/TabContainer/My Profile/MarginContainer"]
+margin_left = 592.0
+margin_right = 743.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Username" type="LineEdit" parent="BodyMargin/TabContainer/My Profile/MarginContainer/HBoxContainer"]
+margin_right = 56.0
+margin_bottom = 48.0
+size_flags_horizontal = 4
+size_flags_vertical = 5
+expand_to_text_length = true
+
+[node name="SetName" type="Button" parent="BodyMargin/TabContainer/My Profile/MarginContainer/HBoxContainer"]
+margin_left = 60.0
+margin_right = 151.0
+margin_bottom = 48.0
+size_flags_vertical = 0
+text = "Set"
+
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="BodyMargin/TabContainer/My Profile/MarginContainer/HBoxContainer/SetName" to="." method="_on_SetName_pressed"]

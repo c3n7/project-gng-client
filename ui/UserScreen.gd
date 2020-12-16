@@ -20,6 +20,13 @@ func _ready():
 	
 	$HTTPRequest.request("http://127.0.0.1:8000/get_all_scores/")
 	request_made = "all_scores"
+	
+	var user = GameState.get_user()
+	
+	if user != "Not Set":
+		$Score/Label.text = user + " " + $Score/Label.text
+		
+	$"BodyMargin/TabContainer/My Profile/MarginContainer/HBoxContainer/Username".text = user
 
 
 func _on_request_completed(_result, _response_code, _headers, body):
@@ -66,3 +73,7 @@ func _make_post_request(url, data_to_send, use_ssl):
 
 func _on_BackButton_pressed():
 	GameState.open_title_screen()
+
+
+func _on_SetName_pressed():
+	pass # Replace with function body.

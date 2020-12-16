@@ -62,22 +62,53 @@ func set_responsiveness(type):
 var score_file = "user://project-gng-data.json"
 
 func add_score(score):
-	var current_score = 0
+	var current_score = get_score()
 	var new_score = current_score + score
 	var f = File.new()
 	f.open(score_file, File.WRITE)
 	f.store_string('{"score": ' + str(new_score) + "}")
 	f.close()
 
+func store_records_dict(records):
+	var f = File.new()
+	f.open(score_file, File.WRITE)
+
+func get_records_dict():
+	var recordsDict: Dictionary = {}
+	var f = File.new()
+	if f.file_exists(score_file):
+		f.open(score_file, File.READ)
+		recordsDict = JSON.parse(f.get_as_text()).result
+	print(JSON.print(recordsDict, "\t"))
+	return recordsDict
+
 func get_score():
+	var records = get_records_dict()
 	var current_score
+	if records.empty() or not records.has("score"):
+		current_score = 0
+	else:
+		current_score = records["score"]
+	return current_score
+
+func get_user():
+	var current_user
 	var f = File.new()
 	if f.file_exists(score_file):
 		f.open(score_file, File.READ)
 		var content = JSON.parse(f.get_as_text()).result
-		current_score = int(content["score"])
+		if content.has("user"):
+			current_user = content["user"]
+		else:
+			current_user = "Not Set"
 		f.close()
-		return current_score
-	
+		return current_user
 	else:
 		return 0
+
+
+func set_user(user):
+	var f = File.new()
+	f.open(score_file, File.WRITE)
+	f.store_string('{"score": ' + str(user) + "}")
+	f.close()
