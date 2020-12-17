@@ -98,7 +98,6 @@ func get_score():
 func get_user():
 	var current_user
 	var records = get_records_dict()
-	var current_score
 	if records.empty() or not records.has("user"):
 		current_user = ""
 	else:
