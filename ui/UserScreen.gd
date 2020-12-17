@@ -97,6 +97,7 @@ func _on_SetName_pressed():
 		request_made = "set_user"
 		_make_post_request("http://127.0.0.1:8000/add_user/", req_data, false)
 	else:
+		print("Hereheere")
 		# Updating set user
 		var req_data = {"name": user, "new_name": username.text}
 		request_made = "set_user"
