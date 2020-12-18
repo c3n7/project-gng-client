@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="divider" type="ColorRect"]
+margin_left = 438.0
+margin_right = 468.0
+margin_bottom = 359.0
+rect_min_size = Vector2( 30, 0 )
+color = Color( 0.0823529, 0.564706, 0.768627, 0 )
