@@ -70,7 +70,7 @@ func add_score(score):
 		current_score = records["score"]
 	var new_score = current_score + score
 	# HACK: using this to reset score
-	if score <= 0:
+	if score < 0:
 		new_score = 0
 	records["score"] = new_score
 	store_records_dict(records)
