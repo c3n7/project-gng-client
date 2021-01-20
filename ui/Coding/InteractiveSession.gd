@@ -29,6 +29,7 @@ func _on_Build_pressed():
 	emit_signal("build")
 
 func show_alert(image):
+	$Whoosh.pitch_scale = 1
 	if $Alert/AnimationPlayer.is_playing():
 		# If animation is already playing, wait first
 		yield($Alert/AnimationPlayer, "animation_finished")

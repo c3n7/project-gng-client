@@ -16,6 +16,7 @@ onready var username: LineEdit = $"BodyMargin/TabContainer/My Profile/MarginCont
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Score/Label.text = "score: " + str(GameState.get_score())
+	$PlayTime/Label.text = "play time: " + str(GameState.get_play_time() / 60) + " min"
 	var error = $HTTPRequest.connect("request_completed", self, "_on_request_completed")
 	if error != OK:
 		push_error("Error while connecting signal")

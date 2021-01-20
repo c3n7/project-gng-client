@@ -167,3 +167,4 @@ func _exit_tree():
 	var totalTime = endedAt - startedAt
 	GameState.add_play_time(totalTime)
 	print_debug("Time = ", totalTime)
+	print_debug("Total time = ", GameState.get_play_time())
