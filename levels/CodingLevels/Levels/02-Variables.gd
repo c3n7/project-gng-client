@@ -8,6 +8,7 @@ func _get_nodes():
 	exercises = $CanvasLayer/InteractiveSession/Full/Right/Bottom/TabContainer/Exercise/ExerciseMargin/Exercise
 	interactive_session = $CanvasLayer/InteractiveSession
 	alert = $CanvasLayer/InteractiveSession/Alert
+	reward = $CanvasLayer/InteractiveSession/Reward
 	httpreq = $HTTPRequest
 	
 	pause_screen = $GreenCoding01/CanvasLayer/paused_dialog

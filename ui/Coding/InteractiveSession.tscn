@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://themes/red_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf" type="DynamicFontData" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight24.png" type="Texture" id=8]
 [ext_resource path="res://assets/HUD/controls/shadedLight/shadedLight25.png" type="Texture" id=9]
 [ext_resource path="res://assets/HUD/controls/flatLight/flatLight22.png" type="Texture" id=10]
+[ext_resource path="res://ui/Coding/Reward.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
@@ -18,47 +19,47 @@ bg_color = Color( 0.0431373, 0.32549, 0.447059, 1 )
 size = 12
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 10.0
 content_margin_right = 10.0
 content_margin_top = 10.0
 content_margin_bottom = 10.0
 bg_color = Color( 0, 0, 0, 0.219608 )
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=4]
 font_path = "res://assets/Fonts/Roboto Mono Nerd Font Complete Mono.ttf"
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 14
-font_data = SubResource( 3 )
+font_data = SubResource( 4 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://assets/Fonts/roboto/Roboto-BoldItalic.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 14
-font_data = SubResource( 5 )
+font_data = SubResource( 6 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=8]
 font_path = "res://assets/Fonts/roboto/Roboto-Italic.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 14
-font_data = SubResource( 7 )
+font_data = SubResource( 8 )
 
-[sub_resource type="DynamicFontData" id=9]
+[sub_resource type="DynamicFontData" id=10]
 font_path = "res://assets/Fonts/roboto/Roboto-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=11]
 size = 14
-font_data = SubResource( 9 )
+font_data = SubResource( 10 )
 
-[sub_resource type="DynamicFontData" id=11]
+[sub_resource type="DynamicFontData" id=12]
 font_path = "res://assets/Fonts/roboto/Roboto-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=13]
 size = 14
-font_data = SubResource( 11 )
+font_data = SubResource( 12 )
 
 [node name="InteractiveSession" type="Control"]
 anchor_right = 1.0
@@ -160,12 +161,12 @@ __meta__ = {
 margin_right = 671.0
 margin_bottom = 351.0
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 13 )
-custom_fonts/mono_font = SubResource( 4 )
-custom_fonts/bold_italics_font = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 8 )
-custom_fonts/bold_font = SubResource( 10 )
-custom_fonts/normal_font = SubResource( 12 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/mono_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 7 )
+custom_fonts/italics_font = SubResource( 9 )
+custom_fonts/bold_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 bbcode_enabled = true
 bbcode_text = "Hello [b]World![/b] [b][i]Let's[/i][/b] [i]learn[/i] [code]code[/code]"
 text = "Hello World! Let's learn code"
@@ -242,12 +243,12 @@ __meta__ = {
 margin_right = 671.0
 margin_bottom = 351.0
 size_flags_vertical = 3
-custom_styles/normal = SubResource( 13 )
-custom_fonts/mono_font = SubResource( 4 )
-custom_fonts/bold_italics_font = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 8 )
-custom_fonts/bold_font = SubResource( 10 )
-custom_fonts/normal_font = SubResource( 12 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/mono_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 7 )
+custom_fonts/italics_font = SubResource( 9 )
+custom_fonts/bold_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 bbcode_enabled = true
 bbcode_text = "Hello [b]World![/b] [b][i]Let's[/i][/b] [i]learn[/i] [code]code[/code]"
 text = "Hello World! Let's learn code"
@@ -329,6 +330,8 @@ text = "output"
 
 [node name="Whoosh" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+
+[node name="Reward" parent="." instance=ExtResource( 11 )]
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Slides/NavButtons/HBoxContainer/Forward" to="." method="_on_Forward_pressed"]
 [connection signal="pressed" from="Full/Right/Bottom/TabContainer/Build/MarginContainer/HBoxContainer/Build" to="." method="_on_Build_pressed"]

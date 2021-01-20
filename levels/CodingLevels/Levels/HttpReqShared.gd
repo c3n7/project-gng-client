@@ -24,6 +24,7 @@ var pause_screen
 var game_level
 var interactive_session
 var alert
+var reward
 var httpreq : HTTPRequest
 
 var startTime
@@ -81,6 +82,7 @@ func _on_game_won():
 	GameState.open_levels_screen()
 
 func _on_next_slide():
+	interactive_session.show_reward("  High\n  Achiever")
 	currentSlide += 1
 	if currentSlide >= slidesCount:
 		currentSlide = slidesCount - 1
@@ -145,6 +147,7 @@ func _ready():
 	interactive_session.set_theme(interactive_session_theme)
 	debug_output.set_theme(output_panel_theme)
 	alert.set_theme(output_panel_theme)
+	reward.set_theme(output_panel_theme)
 	pause_screen.set_theme(interactive_session_theme)
 	
 	# For the slides

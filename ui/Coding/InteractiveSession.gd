@@ -61,8 +61,20 @@ func show_alert(image):
 	$Alert/AnimationPlayer.play("slide_in_out")
 	$Whoosh.play()
 
+func show_reward(text):
+	if $Reward/AnimationPlayer.is_playing():
+		# If animation is already playing, wait first
+		yield($Reward/AnimationPlayer, "animation_finished")
+	
+	$Reward/HBoxContainer/Label.text = text
+	$Reward/AnimationPlayer.play("fade_in_out")
+	$Whoosh.pitch_scale = 0.17
+	$Whoosh.play()
+	yield($Whoosh, "finished")
+	$Whoosh.pitch_scale = 1
 
 func _on_Back_pressed():
+	show_reward(["high", "achiever"])
 	emit_signal("prev_slide")
 
 
