@@ -110,7 +110,6 @@ margin_right = 1346.0
 margin_bottom = 708.0
 
 [node name="Leaderboard" type="Tabs" parent="BodyMargin/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 20.0
@@ -162,6 +161,7 @@ text = "SCORE"
 align = 1
 
 [node name="My Profile" type="Tabs" parent="BodyMargin/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 20.0
