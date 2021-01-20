@@ -26,6 +26,8 @@ var interactive_session
 var alert
 var httpreq : HTTPRequest
 
+var startTime
+
 func init():
 	var error = httpreq.connect("request_completed", self, "_on_request_completed")
 	if error != OK:
@@ -123,6 +125,7 @@ func _on_req_complete(build_status, result):
 	_success(build_status)
 
 func _ready():
+	startTime = OS.get_time()
 	_get_nodes()
 	init()
 	var error = connect("req_complete", self, "_on_req_complete")
@@ -153,3 +156,11 @@ func _ready():
 		print_debug("Error while connecting to next_slide signal")
 	
 	game_level.connect("game_won", self, "_on_game_won")
+
+func _exit_tree():
+	var startedAt = (startTime.hour * 60 * 60) + (startTime.minute * 60) + startTime.second
+	var currentTime = OS.get_time()
+	var endedAt = (currentTime.hour * 60 * 60) + (currentTime.minute * 60) + currentTime.second
+	var totalTime = endedAt - startedAt
+	GameState.add_play_time(totalTime)
+	print_debug("Time = ", totalTime)

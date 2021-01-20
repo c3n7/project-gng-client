@@ -75,6 +75,20 @@ func add_score(score):
 	records["score"] = new_score
 	store_records_dict(records)
 
+func add_play_time(time):
+	var records = get_records_dict()
+	var current_time
+	if records.empty() or not records.has("time"):
+		current_time = 0
+	else:
+		current_time = records["time"]
+	var new_time = current_time + time
+	# HACK: using this to reset time
+	if time < 0:
+		new_time = 0
+	records["time"] = new_time
+	store_records_dict(records)
+
 func store_records_dict(records):
 	var f = File.new()
 	f.open(score_file, File.WRITE)
@@ -98,6 +112,15 @@ func get_score():
 		current_score = records["score"]
 	return current_score
 
+func get_play_time():
+	var records = get_records_dict()
+	var current_time
+	if records.empty() or not records.has("time"):
+		current_time = 0
+	else:
+		current_time = records["time"]
+	return current_time
+	
 func get_user():
 	var current_user
 	var records = get_records_dict()
