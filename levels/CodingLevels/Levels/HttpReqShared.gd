@@ -82,7 +82,7 @@ func _on_game_won():
 	GameState.open_levels_screen()
 
 func _on_next_slide():
-	interactive_session.show_reward("  High\n  Achiever")
+#	interactive_session.show_reward("  High\n  Achiever")
 	currentSlide += 1
 	if currentSlide >= slidesCount:
 		currentSlide = slidesCount - 1
